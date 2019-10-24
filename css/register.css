@@ -1,34 +1,34 @@
-
 body{
-    margin: 0;
-    padding: 0;
     width: 100%;
+    height: 100%;
     font-family: 'Lato', sans-serif;
     color: #272635;
-    position: relative;
-    height: 200px;
+    position: fixed;
     background-color: white;
+    text-align: center;
 }
 
 header{
+    position: fixed;
     background-color: cornflowerblue;
-    height: 100px;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    float: left;
 }
 
 h1{
     position: absolute;
     font-size: 20px;
-    top: 20%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .reg{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 75%;
+    position: static;
 }
+
 
 #start{
     position: inherit;
