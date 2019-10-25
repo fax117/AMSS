@@ -1,0 +1,84 @@
+
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    color: #272635;
+    position: fixed;
+    background-color: white;
+    text-align: center;
+}
+
+header{
+    position: fixed;
+    background-color: cornflowerblue;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    float: left;
+}
+
+h1{
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.reg{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 75%;
+}
+
+#start{
+    position: inherit;
+    width: 100%;
+    height: 84.99%;
+    bottom: 0;
+}
+
+form, #forTables, #center{
+    position: absolute;
+    width: 300px;
+    height: auto;
+    padding: 50px;
+    /*border: 1px solid #898E92;*/
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.inp{
+    width: 90%;
+    height: 40px;
+    padding: 10px 10px;
+    margin: 5px 0px;
+    background-color: transparent;
+    border: 1px solid #898E92;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+}
+
+
+#button{
+    background-color: #47525E;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    border-color: #47525E;
+    border-radius: 9px;
+    height: 50px;
+    width: 101%;
+    color: white;
+    margin-top: 10%;
+}
+
+#button:hover{
+    background: transparent;
+    color: #a0a0a0;
+    /*box-shadow: inset 0 0 0 3px #eaeaea;*/
+}
