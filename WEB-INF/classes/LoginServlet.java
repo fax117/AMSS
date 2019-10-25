@@ -66,7 +66,6 @@ public class LoginServlet extends HttpServlet{
 				if(username.equals(userList.get(i).getEmail())){
 					//username exists in database
 					if(password.equals(userList.get(i).getPassword())){
-						System.out.println("SUCCESSS BITCHES");
 						//user & password combination found in mySQL table
 
 						//prepare Vector to create initial .jsp page FOLLOWS EXAMPLE TO CREATE VECTOR INJECTIONS TO POPULATE JSP WITH DATABASE INFO ->->->->->->->->
