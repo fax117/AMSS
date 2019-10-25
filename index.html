@@ -8,20 +8,21 @@
         <link href="css/login.css" rel ="stylesheet">
     </head>
     <body>
+        <header>
+            <h1>Ingresa a la cuenta</h1>
+        </header>
         <section id="start">
             <div class="centrardiv">
-                <h1>Ingreso a cuenta</h1>
-                <form method="post" action="./LoginUser" class="centrardiv">
+                <form method="post" action="./LoginUser">
                     <input type="text" required placeholder="Usuario" class="inp" name="username" id="username">
                     <input type="password" required placeholder="Contraseña" class="inp" name="password" id="password">
-                    <input type="submit" value="Siguiente" id="button">
-                    <div class="reg-error"></div>
+                    <input type="submit" value="Ingresar" id="button">
                 </form>
-                <a href="./registerUser.jsp"><button id="button">Crear cuenta</button></a>
+                <form action="./registerUser.jsp">
+                    <input type="submit" value="Crear Cuenta" id="button">
+                </form>
+                
             </div>
         </section>
-        <!-- <div class="login"></div> 
-        <div class="reg-error"></div> -->
-        
     </body>
 </html>
