@@ -19,7 +19,7 @@
 
         <section id="start">
             <div class="centrardiv"> <!-- arreglar un poco más -->
-                <form method="post" action="./index.jsp">
+                <form method="post" action="./RegisterUser">
                     <input type="text" required placeholder="Nombre" class="inp user" name="addName" id="addName">
                     <input type="text" required placeholder="Apellido" class="inp user" name="addLastName" id="addLastName">
                     <input type="text" required placeholder="Email" class="inp user" name="addEmail" id="addEmail">
