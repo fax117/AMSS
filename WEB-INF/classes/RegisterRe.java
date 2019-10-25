@@ -6,7 +6,7 @@ import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/RegisterRe")
-public class RegisterServlet extends HttpServlet{
+public class RegisterRe extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
