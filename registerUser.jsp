@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <title>Registro Administrador</title>
+        <title>Registro Usuario</title>
         <link href="css/resetCss.css" rel ="stylesheet">
         <link href="css/register.css" rel ="stylesheet">
     </head>
