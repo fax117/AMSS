@@ -51,9 +51,17 @@ public class LoginServlet extends HttpServlet{
 				userList.add(aux);
 			}
 
-			//compare users with info submitted by login action
+			ResultSet inves = stat.executeQuery("SELECT * from investigador");
+			Vector<Researcher> researcherList = new Vector<Researcher>();
 
-			boolean loginSuccess = false;
+			while(inves.next()){
+				Researcher aux = new Researcher(Long.valueOf(inves.getString("id_Investigador")), Integer.valueOf(inves.getString("Clearance")), inves.getString("Nombre"), inves.getString("Correo"), inves.getString("Contrasena"));
+				researcherList.add(aux);
+			}
+
+			//login
+
+			int loginSuccess = 0;
 			for(int i = 0; i<userList.size(); i++){
 				if(username.equals(userList.get(i).getEmail())){
 					//username exists in database
@@ -229,43 +237,42 @@ public class LoginServlet extends HttpServlet{
 						}
 						*/
 
-						loginSuccess = true;
-						RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
-						if(disp!=null){
-							disp.forward(request,response);
-						}
-
+						loginSuccess = 1; // User login
 					}
 				}
-			}
-
-			ResultSet res2 = stat.executeQuery("SELECT * FROM investigador;");
-			Vector<Investigador> researcherList = new Vector<Investigador>();
-
-			while(res2.next()){
-				Investigador aux2 = new Investigador(Integer.valueOf(res.getString("Clearance")), res.getString("Nombre"), res.getString("Correo"), res.getString("Contrasena"), Long.valueOf(res.getString("id_Invetsigador")));
-				researcherList.add(aux2);
 			}
 
 			//compare users with info submitted by login action
 
 			for(int i = 0; i<researcherList.size(); i++){
 				if(username.equals(researcherList.get(i).getEmail())){
-					//username exists in database
-					if(password.equals(userList.get(i).getPassword())){
-						System.out.println("SUCCESSS BITCHES");
-						loginSuccess = true;
-						RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
-						if(disp!=null){
-							disp.forward(request,response);
+					//username researcher exists in database
+					if(password.equals(researcherList.get(i).getPassword())){
+						System.out.println("SUCCESSS BITCHES IN RESEARCH");
+						if(researcherList.get(i).getClearance() == 1){
+							//admin login
+							loginSuccess = 2;
 						}
-
+						else{
+							loginSuccess = 3;
+						}
 					}
 				}
 			}
 
-			if(!loginSuccess){
-				//No username-password combination found in database - Login ERROR
+			if(loginSuccess == 1){
+				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
+				if(disp!=null){
+					disp.forward(request,response);
+				}
+			}
+			else if(loginSuccess == 2){
+				response.sendRedirect("./landingPageAdmin.html");
+			}
+			else if(loginSuccess == 3){
+				response.sendRedirect("./landingPageResearcher.html");
+			}
+			else{
 				response.sendRedirect("./login.html");
 			}
 
