@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<!--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html; charset=UTF-8" %>-->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <title>Registro Administrador</title>
+        <title>Registro Usuario</title>
         <link href="css/resetCss.css" rel ="stylesheet">
         <link href="css/register.css" rel ="stylesheet">
     </head>
@@ -18,9 +19,9 @@
 
         <section id="start">
             <div class="centrardiv"> <!-- arreglar un poco más -->
-                <form>
+                <form method="post" action="./index.jsp">
                     <input type="text" required placeholder="Nombre" class="inp user" name="addName" id="addName">
-                    <input type="text" required placeholder="Apellido" class="inp user" name="addLastname" id="addLastname">
+                    <input type="text" required placeholder="Apellido" class="inp user" name="addLastName" id="addLastName">
                     <input type="text" required placeholder="Email" class="inp user" name="addEmail" id="addEmail">
                     <input type="text" required placeholder="Dirección" class="inp user" name="addAddress" id="addAddress">
                     <input type="text" required placeholder="Código Postal" class="inp user" name="addCP" id="addCP">
