@@ -47,8 +47,8 @@ public class RegisterServlet extends HttpServlet{
 			String password = request.getParameter("addPW");
 
 			//save values in database
-			int res = stat.executeUpdate("insert into Usuario(Nombre, Apellido, Fecha de Nacimiento, Direccion, Codigo Postal, Correo electronico, Contrasena) VALUES (\""
-				+ name + "\", \"" + lastName + "\", \"" + date + "\", \"" + address + "\", \"" + zipCode + "\", \"" + email + "\", \"" + password + "\");");
+			int res = stat.executeUpdate("insert into Usuario(Nombre, Apellido, `Fecha de Nacimiento`, Direccion, `Codigo Postal`, `Correo electronico`, Contrasena) VALUES (\""
+				+ name + "\", \"" + lastName + "\", \"" + date + "\", \"" + address + "\"," + zipCode + ", \"" + email + "\", \"" + password + "\");");
 
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
@@ -79,7 +79,7 @@ public class RegisterServlet extends HttpServlet{
 
 			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
 
-			response.sendRedirect("./index.jsp?userRegister=1");
+			response.sendRedirect("./index.jsp");
 
 		}
 		catch(Exception e){
