@@ -38,7 +38,6 @@ form, #forTables, #center{
     width: 300px;
     height: auto;
     padding: 50px;
-  
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -116,7 +115,7 @@ form, #forTables, #center{
     height: 50px;
     width: 101%;
     color: white;
-    margin-top: 10%;
+    margin-top: 95%;
 }
 
 @media only screen and (max-width: 600px) {
