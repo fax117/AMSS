@@ -41,7 +41,7 @@ public class RegisterRe extends HttpServlet{
 			String name = request.getParameter("ReName");
 			String email = request.getParameter("ReEmail");
 			String password = request.getParameter("RePW");
-			int type = request.getParameter("ReType")
+			String type = request.getParameter("ReType");
 
 			//save values in database
 			int res = stat.executeUpdate("insert into Investigador(Clearance,Nombre, Correo, Contrasena) VALUES (\""
@@ -76,7 +76,7 @@ public class RegisterRe extends HttpServlet{
 
 			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
 
-			response.sendRedirect("./index.jsp?userRegister=1");
+			response.sendRedirect("./");
 
 		}
 		catch(Exception e){
