@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/RegisterRe")
-public class RegisterServlet extends HttpServlet{
+@WebServlet("/RegisterUser")
+public class RegisterRe extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -38,9 +38,13 @@ public class RegisterServlet extends HttpServlet{
 			//------User register STARTS------
 
 			//retrieve values from register's forms
-			String name = request.getParameter("ReName");
-			String email = request.getParameter("ReEmail");
-			String password = request.getParameter("RePW");
+			String name = request.getParameter("addName");
+			String lastName = request.getParameter("addLastName");
+			String email = request.getParameter("addEmail");
+			String address = request.getParameter("addAddress");
+			String zipCode = request.getParameter("addCP");
+			String date = request.getParameter("addBirthdate");
+			String password = request.getParameter("addPW");
 
 			//save values in database
 			int res = stat.executeUpdate("insert into Usuario(Nombre, Apellido, `Fecha de Nacimiento`, Direccion, `Codigo Postal`, `Correo electronico`, Contrasena) VALUES (\""
