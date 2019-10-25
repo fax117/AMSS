@@ -267,10 +267,16 @@ public class LoginServlet extends HttpServlet{
 				}
 			}
 			else if(loginSuccess == 2){
-				response.sendRedirect("./landingPageAdmin.html");
+				RequestDispatcher disp = getServletContext().getRequestDispatcher("/LandingPageAdmin.jsp");
+				if(disp!=null){
+					disp.forward(request,response);
+				}
 			}
 			else if(loginSuccess == 3){
-				response.sendRedirect("./landingPageResearcher.html");
+				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingPageResearcher.jsp");
+				if(disp!=null){
+					disp.forward(request,response);
+				}
 			}
 			else{
 				response.sendRedirect("./login.html");
