@@ -6,7 +6,7 @@
   metadata-complete="false">
 
 <display-name>
-	Final Project
+	IRPS Tec System
 </display-name>
 
 <description>
@@ -51,9 +51,8 @@
 		base
 	</param-name> 
 	<param-value>
-		abogados
+		irps_tec_db
 	</param-value> 
-</context-param> 
-
+</context-param>
 
 </web-app>
