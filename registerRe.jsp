@@ -7,14 +7,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <title>Registro Usuario</title>
+        <title>Registro Investigador</title>
         <link href="css/resetCss.css" rel ="stylesheet">
         <link href="css/register.css" rel ="stylesheet">
     </head>
     <body>
 
         <header>
-            <h1>Registrate</h1>
+            <h1>Registrar Investigador</h1>
         </header>
 
         <section id="start">
