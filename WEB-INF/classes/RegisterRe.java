@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/RegisterUser")
-public class RegisterRe extends HttpServlet{
+@WebServlet("/RegisterRe")
+public class RegisterServlet extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -38,17 +38,13 @@ public class RegisterRe extends HttpServlet{
 			//------User register STARTS------
 
 			//retrieve values from register's forms
-			String name = request.getParameter("addName");
-			String lastName = request.getParameter("addLastName");
-			String email = request.getParameter("addEmail");
-			String address = request.getParameter("addAddress");
-			String zipCode = request.getParameter("addCP");
-			String date = request.getParameter("addBirthdate");
-			String password = request.getParameter("addPW");
+			String name = request.getParameter("ReName");
+			String email = request.getParameter("ReEmail");
+			String password = request.getParameter("RePW");
 
 			//save values in database
-			int res = stat.executeUpdate("insert into Usuario(Nombre, Apellido, `Fecha de Nacimiento`, Direccion, `Codigo Postal`, `Correo electronico`, Contrasena) VALUES (\""
-				+ name + "\", \"" + lastName + "\", \"" + date + "\", \"" + address + "\"," + zipCode + ", \"" + email + "\", \"" + password + "\");");
+			int res = stat.executeUpdate("insert into Investigador(Nombre, Correo electronico, Contrasena) VALUES (\""
+				+ name + "\", \"" + email + "\", \"" + password + "\");");
 
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
@@ -79,7 +75,7 @@ public class RegisterRe extends HttpServlet{
 
 			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
 
-			response.sendRedirect("./index.jsp");
+			response.sendRedirect("./index.jsp?userRegister=1");
 
 		}
 		catch(Exception e){
