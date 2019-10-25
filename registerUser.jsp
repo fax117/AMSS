@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html; charset=UTF-8" %>-->
+<%@ tablib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -18,9 +17,9 @@
 
         <section id="start">
             <div class="centrardiv"> <!-- arreglar un poco más -->
-                <form>
+                <form method="post" action="./RegisterUser">
                     <input type="text" required placeholder="Nombre" class="inp user" name="addName" id="addName">
-                    <input type="text" required placeholder="Apellido" class="inp user" name="addLastname" id="addLastname">
+                    <input type="text" required placeholder="Apellido" class="inp user" name="addLastName" id="addLastName">
                     <input type="text" required placeholder="Email" class="inp user" name="addEmail" id="addEmail">
                     <input type="text" required placeholder="Dirección" class="inp user" name="addAddress" id="addAddress">
                     <input type="text" required placeholder="Código Postal" class="inp user" name="addCP" id="addCP">
