@@ -76,7 +76,7 @@ public class RegisterRe extends HttpServlet{
 
 			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
 
-			response.sendRedirect("./");
+			response.sendRedirect("./LandingPageAdmin.jsp");
 
 		}
 		catch(Exception e){
