@@ -24,7 +24,15 @@
                     <input type="email" required placeholder="Email" class="inp user" name="ReEmail" id="ReEmail">
                     <input type="password" minlenght="8" required placeholder="Contraseña" class="inp passw" name="RePW" id="RePW">
                     <input type="password" minlenght="8" required placeholder="Confirmar Contraseña" class="inp passw" name="RePW2" id="RePW2">
+
+                    <select class="inp type" required placeholder="Tipo de usuario" name="ReType" id="ReType">
+                      <option value="1">Administrador</option>
+                      <option value="2">Investigador</option>
+                    </select>
+
                     <input type="submit" value="Siguiente" id="button">
+
+
                 </form>
                 <!-- <div class="login"></div>
                 <div class="reg-error"></div> -->
