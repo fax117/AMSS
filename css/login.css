@@ -8,10 +8,22 @@ body{
     text-align: center;
 }
 
-h1{
+header{
     position: fixed;
+    background-color: cornflowerblue;
     width: 100%;
-    font-size: 30px;
+    height: 15%;
+    text-align: center;
+    float: left;
+}
+
+
+h1{
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .reg{
@@ -34,13 +46,15 @@ h1{
 }
 
 form, #forTables, #center{
-    position: absolute;
-    width: 300px;
+    width: 100%;
     height: auto;
-    padding: 50px;
+    padding: 0px;
+    float: left;
+    clear: both;
+    /*position: absolute;
     left: 50%;
     top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);*/
 }
 
 .inp{
@@ -116,6 +130,19 @@ form, #forTables, #center{
     width: 101%;
     color: white;
     margin-top: 95%;
+}
+.centrardiv{
+	width: 50%;
+	height: 300px;
+	position: absolute;
+	left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.fakeButton{
+    text-align: center;
+    margin: auto;
 }
 
 @media only screen and (max-width: 600px) {

@@ -40,16 +40,25 @@ h1{
     bottom: 0;
 }
 
+.centrardiv{
+	width: 50%;
+	height: auto;
+	position: absolute;
+	left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
 form, #forTables, #center{
-    position: absolute;
     width: 300px;
     height: auto;
     padding: 50px;
     /*border: 1px solid #898E92;*/
     border-radius: 10px;
+    /*position: absolute;
     left: 50%;
     top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);*/
 }
 
 .inp{
