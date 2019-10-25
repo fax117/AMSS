@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <%@ tablib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
-=======
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
->>>>>>> e7a5e85158a390d1a3a23695e1d1855362da4493
 <html>
     <head>
         <meta charset="UTF-8">
