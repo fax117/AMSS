@@ -14,7 +14,21 @@
     </head>
     <body>
         <header>
-            <img class="header-icons" id="ham-menu" src="img/menu.svg">
+        <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menu">
+              <a href="#"><li>Home</li></a>
+              <a href="#"><li>About</li></a>
+              <a href="#"><li>Info</li></a>
+              <a href="#"><li>Contact</li></a>
+            </ul>
+          </div>
+        </nav>
             <img class="header-icons" id="profile-icon" src="img/profile-icon.svg">
         </header>
 
