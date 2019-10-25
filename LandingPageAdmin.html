@@ -19,7 +19,7 @@
 
         <div id="thingsToDo">
             <button id="button">Revisar base de datos</button>
-            <a href=""><button id="button">Registrar investigador</button></a>
+            <a href="./registerRe.jsp"><button id="button">Registrar investigador</button></a>
             <button id="button">Editar investigador</button>
             <button id="button">Agregar recomendaciones</button>
         </div>

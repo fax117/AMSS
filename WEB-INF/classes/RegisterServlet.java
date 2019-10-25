@@ -79,7 +79,7 @@ public class RegisterServlet extends HttpServlet{
 
 			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
 
-			response.sendRedirect("./index.jsp");
+			response.sendRedirect("./");
 
 		}
 		catch(Exception e){
