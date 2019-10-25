@@ -238,6 +238,32 @@ public class LoginServlet extends HttpServlet{
 					}
 				}
 			}
+
+			ResultSet res2 = stat.executeQuery("SELECT * FROM investigador;");
+			Vector<Investigador> researcherList = new Vector<Investigador>();
+
+			while(res2.next()){
+				Investigador aux2 = new Investigador(Integer.valueOf(res.getString("Clearance")), res.getString("Nombre"), res.getString("Correo"), res.getString("Contrasena"), Long.valueOf(res.getString("id_Invetsigador")));
+				researcherList.add(aux2);
+			}
+
+			//compare users with info submitted by login action
+
+			for(int i = 0; i<researcherList.size(); i++){
+				if(username.equals(researcherList.get(i).getEmail())){
+					//username exists in database
+					if(password.equals(userList.get(i).getPassword())){
+						System.out.println("SUCCESSS BITCHES");
+						loginSuccess = true;
+						RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
+						if(disp!=null){
+							disp.forward(request,response);
+						}
+
+					}
+				}
+			}
+
 			if(!loginSuccess){
 				//No username-password combination found in database - Login ERROR
 				response.sendRedirect("./login.html");
