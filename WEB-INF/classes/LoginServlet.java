@@ -279,7 +279,7 @@ public class LoginServlet extends HttpServlet{
 				}
 			}
 			else{
-				response.sendRedirect("./login.html");
+				response.sendRedirect("./index.html");
 			}
 
 			stat.close();
