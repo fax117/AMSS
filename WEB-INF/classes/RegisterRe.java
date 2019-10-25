@@ -41,10 +41,11 @@ public class RegisterRe extends HttpServlet{
 			String name = request.getParameter("ReName");
 			String email = request.getParameter("ReEmail");
 			String password = request.getParameter("RePW");
+			int type = request.getParameter("ReType")
 
 			//save values in database
-			int res = stat.executeUpdate("insert into Investigador(Nombre, Correo, Contrasena) VALUES (\""
-				+ name + "\", \"" + email + "\", \"" + password + "\");");
+			int res = stat.executeUpdate("insert into Investigador(Clearance,Nombre, Correo, Contrasena) VALUES (\""
+				+ type + "\",\""+ name + "\", \"" + email + "\", \"" + password + "\");");
 
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 

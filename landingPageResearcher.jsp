@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>-->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -18,10 +18,7 @@
         </header>
 
         <div id="thingsToDo">
-            <button id="button">Revisar base de datos</button>
-            <a href=""><button id="button">Registrar investigador</button></a>
-            <button id="button">Editar investigador</button>
-            <button id="button">Agregar recomendaciones</button>
+            <button id="button">Revisar base de datos</button> <!--Solo para el update-->>
         </div>
         
     </body>
