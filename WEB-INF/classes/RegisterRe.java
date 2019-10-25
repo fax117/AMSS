@@ -6,7 +6,7 @@ import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/RegisterRe")
-public class RegisterServlet extends HttpServlet{
+public class RegisterRe extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -43,7 +43,7 @@ public class RegisterServlet extends HttpServlet{
 			String password = request.getParameter("RePW");
 
 			//save values in database
-			int res = stat.executeUpdate("insert into Investigador(Nombre, Correo electronico, Contrasena) VALUES (\""
+			int res = stat.executeUpdate("insert into Investigador(Nombre, Correo, Contrasena) VALUES (\""
 				+ name + "\", \"" + email + "\", \"" + password + "\");");
 
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
