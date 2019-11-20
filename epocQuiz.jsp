@@ -114,7 +114,11 @@
                         </div>
 
                         <div class="in-line">
-                            <p>Ninguna opresión en pecho 1 </p><input type="range" name="tos" min="1" max="5" step="1" list="marks"><p> 5 Mucha opresión en pecho</p>
+                            <div class="right-slider">
+                                <p>Ninguna opresión en pecho 1 </p>
+                            </div>
+                            <input type="range" name="tos" min="1" max="5" step="1" list="marks">
+                            <div class="right-slider"><p> 5 Mucha opresión en pecho</p></div>
                         </div>
 
                         <div class="in-line">

@@ -43,7 +43,6 @@ form, #forTables, #center{
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     overflow: scroll;
-    overflow-x: hidden;
 }
 .lefty{
     float: left;
@@ -85,4 +84,8 @@ form, #forTables, #center{
 
 .range{
     width: 100px;
+}
+
+.right-slider{
+    width: 50%;
 }
