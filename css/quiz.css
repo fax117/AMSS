@@ -35,13 +35,14 @@ h1{
 form, #forTables, #center{
     position: absolute;
     width: 300px;
-    height: auto;
+    height: 75%;
     padding: 50px;
     border: 1px solid #898E92;
     border-radius: 10px;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
+    overflow: scroll;
 }
 .lefty{
     float: left;

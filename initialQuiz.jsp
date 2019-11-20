@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cuestionario inicial</title>
+        <link href="css/resetCss.css" rel ="stylesheet">
+        <link href="css/quiz.css" rel ="stylesheet">
+    </head>
+    <body>
+
+        <header>
+            <h1>Cuestionario inicial</h1>
+        </header>
+
+        <section id="start">
+            <div class="centrardiv"> <!-- arreglar un poco más -->
+                <form>
+                    <div id="order">
+                        <p class="lefty question">Encuesta por llenar a diario:</p>
+                        <div class="lefty question">
+                            <input class="lefty" type="radio" name="enfermedad" value="Asma">
+                            <p class="lefty">Asma</p>
+                            <input class="lefty" type="radio" name="enfermedad" value="EPOC">
+                            <p class="lefty">EPOC</p>
+                            <input class="lefty" type="radio" name="enfermedad" value="Otra">
+                            <p class="lefty">Otra</p>
+                        </div>
+                            
+                        <p class="lefty question">Nivel de estudios: </p>
+                        <div class="lefty question">
+                            <input class="lefty" type="radio" name="studyLevel" value="primaria">
+                                <p class="lefty">Primaria</p>
+                                <br>
+                                <br>
+                                <input class="lefty" type="radio" name="studyLevel" value="secundaria">
+                                <p class="lefty">Secundaria</p>
+                                <br>
+                                <br>
+                                <input class="lefty" type="radio" name="studyLevel" value="prepa">
+                                <p class="lefty">Preparatoria</p>
+                                <br>
+                                <br>
+                                <input class="lefty" type="radio" name="studyLevel" value="licenciatura">
+                                <p class="lefty">Licenciatura</p>
+                                <br>
+                                <br>
+                                <input class="lefty" type="radio" name="studyLevel" value="posgrado">
+                                <p class="lefty">Posgrado</p>
+                                <br>
+                                <br>
+                        </div>                        <!-- <input class="lefty inp"  type="text" required placeholder="Respuesta" class="inp" name="pregunta2" id="pregunta2"> -->
+                        <p class="lefty question">¿Fuma?</p>
+                        <div class="lefty question">
+                            <input class="lefty" type="radio" name="fuma" value="Asma">
+                            <p class="lefty">Sí</p>
+                            <input class="lefty" type="radio" name="fuma" value="EPOC">
+                            <p class="lefty">No</p>
+                        </div>
+
+                        <div class="lefty question">
+                            <p class="lefty">En caso afirmativo</p>
+                            <br>
+                            <p class="lefty">Cantidad al día</p>
+                            <br>
+                            <select class="lefty">
+                                <option value="uno">1</option>
+                                <option value="dos">2</option>
+                                <option value="tres">3</option>
+                                <option value="cuatroMas">4+</option>
+                            </select>
+                        </div>
+                        <p class="lefty question">Si dejó de fumar, ¿hace cuánto?</p>
+                        <div class="lefty question">
+                            <select class="lefty">
+                                <option value="menosAño">-1 año</option>
+                                <option value="año">1 año</option>
+                                <option value="masAño">+1 año</option>
+                            </select>
+                        </div>
+                        <p class="lefty question">¿Convive con fumadores?</p>
+                        <div class="lefty question">
+                            <input class="lefty" type="radio" name="convivirFumadores" value="Si">
+                            <p class="lefty">Sí</p>
+                            <br>
+                            <br>
+                            <input class="lefty" type="radio" name="convivirFumadores" value="No">
+                            <p class="lefty">No</p>
+                            <br>
+                            <br>
+                            <p class="lefty">¿Dónde?</p>
+                            <br>
+                            <input type="textarea" name="dondeFumadores">
+                        </div>
+                        <div class="lefty question">
+                            <p class="lefty question">Otro tipo de humo al que esté expuesto/a</p>
+                            <input class="lefty" type="textarea" name="otrosHumos">
+                        </div>
+                        <div class="lefty question">
+                            <p class="lefty question">¿Presenta alguna otra enfermedad diagnosticada?</p>
+                            <select class="lefty">
+                                <option value="menosAño">-1 año</option>
+                                <option value="año">1 año</option>
+                                <option value="masAño">+1 año</option>
+                            </select>
+                        </div>
+                        <!-- <textarea class="lefty inp"></textarea> -->
+                        <input type="submit" value="Registrar" id="button">                        
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>
