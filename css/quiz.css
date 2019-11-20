@@ -43,6 +43,7 @@ form, #forTables, #center{
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     overflow: scroll;
+    overflow-x: hidden;
 }
 .lefty{
     float: left;
@@ -77,3 +78,11 @@ form, #forTables, #center{
     /*box-shadow: inset 0 0 0 3px #eaeaea;*/
 }
 
+.in-line{
+    display: -webkit-inline-box;
+    font-size: 12px;
+}
+
+.range{
+    width: 100px;
+}

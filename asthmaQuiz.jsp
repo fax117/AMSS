@@ -97,7 +97,6 @@
                         </div>
                         <br>
 
-                        <p class="lefty question"><b>Entre ayer y hoy:</b></p>
                         <div class="lefty question">
                             <p class="lefty question">¿Cuánto te ha impedido el asma hacer todo lo que querías (trabajo/escuela/casa)?</p>
                             <br><br><br>
