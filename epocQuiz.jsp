@@ -106,39 +106,77 @@
                                 <option value="4">
                                 <option value="5">
                             </datalist>
-                            <p>Nunca toso 1 </p><input type="range" name="tos" min="1" max="5" step="1" list="marks"><p> 5 Siempre toso</p>
+                            <p>Nunca toso</p><input type="range" name="tos" min="1" max="5" step="1" list="marks"><p>Siempre toso</p>
                         </div>
-
-                        <div class="in-line">
-                            <p>Sin flema 1 </p><input type="range" name="flema" min="1" max="5" step="1" list="marks"><p> 5 Exceso de flema</p>
-                        </div>
-
+                        <br><br>
                         <div class="in-line">
                             <div class="right-slider">
-                                <p>Ninguna opresión en pecho 1 </p>
+                                <p>No tengo flema en pecho</p>
                             </div>
                             <input type="range" name="tos" min="1" max="5" step="1" list="marks">
-                            <div class="right-slider"><p> 5 Mucha opresión en pecho</p></div>
+                            <div class="right-slider">
+                                <p>Tengo mucha flema en pecho</p>
+                            </div>
                         </div>
-
+                        <br><br>
                         <div class="in-line">
-                            <p>Nunca toso 1 </p><input type="range" name="tos" min="1" max="5" step="1" list="marks"><p> 5 Siempre toso</p>
+                            <div class="right-slider">
+                                <p>Ninguna opresión en pecho</p>
+                            </div>
+                            <input type="range" name="tos" min="1" max="5" step="1" list="marks">
+                            <div class="right-slider">
+                                <p>Mucha opresión en pecho</p>
+                            </div>
                         </div>
-
+                        <br><br>
                         <div class="in-line">
-                            <p>Nunca toso 1 </p><input type="range" name="tos" min="1" max="5" step="1" list="marks"><p> 5 Siempre toso</p>
+                            <div class="right-slider">
+                                <p>Cuando subo escaleras no me falta el aire</p>
+                            </div>
+                            <input type="range" name="tos" min="1" max="5" step="1" list="marks">
+                            <div class="right-slider">
+                                <p>Cuando subo escaleras me falta mucho el aire</p>
+                            </div>
                         </div>
-
+                        <br><br>
                         <div class="in-line">
-                            <p>Nunca toso 1 </p><input type="range" name="tos" min="1" max="5" step="1" list="marks"><p> 5 Siempre toso</p>
+                            <div class="right-slider">
+                                <p>Sin limitación para realizar actividades</p>
+                            </div>
+                            <input type="range" name="tos" min="1" max="5" step="1" list="marks">
+                            <div class="right-slider">
+                                <p>Muy limitado para realizar actividades</p>
+                            </div>
                         </div>
-
+                        <br><br>
                         <div class="in-line">
-                            <p>Nunca toso 1 </p><input type="range" name="tos" min="1" max="5" step="1" list="marks"><p> 5 Siempre toso</p>
+                            <div class="right-slider">
+                                <p>Seguro de salir de casa con mi enfermedad</p>
+                            </div>
+                            <input type="range" name="tos" min="1" max="5" step="1" list="marks">
+                            <div class="right-slider">
+                                <p>No seguro de salir de casa con mi enfermedad</p>
+                            </div>
                         </div>
-
+                        <br><br>
                         <div class="in-line">
-                            <p>Nunca toso 1 </p><input type="range" name="tos" min="1" max="5" step="1" list="marks"><p> 5 Siempre toso</p>
+                            <div class="right-slider">
+                                <p>Duermo sin problemas</p>
+                            </div>
+                            <input type="range" name="tos" min="1" max="5" step="1" list="marks">
+                            <div class="right-slider">
+                                <p>Problemas al dormir por mi enfermedad</p>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="in-line">
+                            <div class="right-slider">
+                                <p>Tengo mucha energía</p>
+                            </div>
+                            <input type="range" name="tos" min="1" max="5" step="1" list="marks">
+                            <div class="right-slider">
+                                <p>No tengo nada de energía</p>
+                            </div>
                         </div>
 
                         <input type="submit" value="Guardar" id="button">                        
