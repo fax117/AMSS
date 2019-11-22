@@ -38,16 +38,17 @@ h1{
     width: 100%;
     height: 84.99%;
     bottom: 0;
+    overflow: scroll;
 }
 
-.centrardiv{
+/*.centrardiv{
 	width: 50%;
 	height: auto;
 	position: absolute;
 	left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-}
+}*/
 
 form, #forTables, #center{
     width: 300px;
