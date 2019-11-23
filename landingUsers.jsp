@@ -10,7 +10,7 @@
         <title>Página Principal</title>
         <link href="css/resetCss.css" rel ="stylesheet">
         <link href="css/home.css" rel ="stylesheet">
-        
+
     </head>
     <body>
         <header>
@@ -25,7 +25,7 @@
               <a href="#"><li>Home</li></a>
               <a href="#"><li>About</li></a>
               <a href="#"><li>Info</li></a>
-              <a href="#"><li>Contact</li></a>
+              <a href=""><li>Consulta</li></a>
             </ul>
           </div>
         </nav>
@@ -54,6 +54,6 @@
             <img class="recomIcons" src="img/recomAsthma.svg">
             <img class="recomIcons" src="img/recomNoSun.svg">
         </div>
-        
+
     </body>
 </html>

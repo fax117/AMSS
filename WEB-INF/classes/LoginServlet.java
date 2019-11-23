@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet{
 
 			//retrieve all registered users and store them in a vector
 
-			ResultSet res = stat.executeQuery("SELECT * FROM usuario;");
+			ResultSet res = stat.executeQuery("SELECT * FROM Usuario;");
 			Vector<User> userList = new Vector<User>();
 
 			while(res.next()){
@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet{
 				userList.add(aux);
 			}
 
-			ResultSet inves = stat.executeQuery("SELECT * from investigador");
+			ResultSet inves = stat.executeQuery("SELECT * from Investigador");
 			Vector<Researcher> researcherList = new Vector<Researcher>();
 
 			while(inves.next()){
