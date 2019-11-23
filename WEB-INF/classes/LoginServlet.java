@@ -41,6 +41,7 @@ public class LoginServlet extends HttpServlet{
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
 
+
 			//retrieve all registered users and store them in a vector
 
 			ResultSet res = stat.executeQuery("SELECT * FROM Usuario;");
@@ -260,18 +261,39 @@ public class LoginServlet extends HttpServlet{
 			}
 
 			if(loginSuccess == 1){
+				HttpSession session = request.getSession();
+				session.setAttribute("user", username);
+				//setting session to expiry in 30 mins
+				session.setMaxInactiveInterval(30*60);
+				Cookie userName = new Cookie("user", username );
+				userName.setMaxAge(30*60);
+				response.addCookie(userName);
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
 				if(disp!=null){
 					disp.forward(request,response);
 				}
 			}
 			else if(loginSuccess == 2){
+				HttpSession session = request.getSession();
+				session.setAttribute("user", username);
+				//setting session to expiry in 30 mins
+				session.setMaxInactiveInterval(30*60);
+				Cookie userName = new Cookie("user", username );
+				userName.setMaxAge(30*60);
+				response.addCookie(userName);
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/LandingPageAdmin.jsp");
 				if(disp!=null){
 					disp.forward(request,response);
 				}
 			}
 			else if(loginSuccess == 3){
+				HttpSession session = request.getSession();
+				session.setAttribute("user", username);
+				//setting session to expiry in 30 mins
+				session.setMaxInactiveInterval(30*60);
+				Cookie userName = new Cookie("user", username);
+				userName.setMaxAge(30*60);
+				response.addCookie(userName);
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingPageResearcher.jsp");
 				if(disp!=null){
 					disp.forward(request,response);
