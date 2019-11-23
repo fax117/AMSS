@@ -28,6 +28,9 @@
                             <input class="lefty" type="radio" name="enfermedad" value="EPOC">
                             <p class="lefty">EPOC</p>
                             <br><br>
+                            <input class="lefty" type="radio" name="enfermedad" value="Sano">
+                            <p class="lefty">Sano</p>
+                            <br><br>
                             <input class="lefty" type="radio" name="enfermedad" value="Otra">
                             <p class="lefty">Otra</p>
                             <br><br>

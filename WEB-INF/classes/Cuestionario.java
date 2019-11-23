@@ -6,13 +6,11 @@ public class Cuestionario{
 	private String tipo;
 	private String fecha;
 	private int idCuestionario;
-	private List<String> respuestas;
 
-	public Cuestionario(String tipo, String fecha, int idCuestionario, List<String> respuestas){
+	public Cuestionario(String tipo, String fecha, int idCuestionario){
 		this.tipo = tipo;
 		this.fecha = fecha;
 		this.idCuestionario = idCuestionario;
-		this.respuestas = new LinkedList<>();
 	}
 
 	public void setTipo(String tipo){
@@ -37,13 +35,5 @@ public class Cuestionario{
 
 	public int getIdCuestionario(){
 		return idCuestionario;
-	}
-
-	public List<String> getRespuestas(){
-		return respuestas;
-	}
-
-	public void addRespuesta(String respuesta){
-		respuestas.add(respuesta);
 	}
 }
