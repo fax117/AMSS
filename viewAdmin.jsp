@@ -32,7 +32,7 @@
   					<c:out value= "${us.mensajeUser}" />
   				</td>
           <td>
-            <a href="#"></a>
+            <a href="#">Responder</a>
           </td>
   			</tr>
 			</c:forEach>
