@@ -24,7 +24,7 @@
               <a href="#"><li>Home</li></a>
               <a href="#"><li>About</li></a>
               <a href="#"><li>Info</li></a>
-              <a href="#"><li>Contact</li></a>
+              <a href="ViewPregunta"><li>Responder</li></a>
             </ul>
           </div>
         </nav>
@@ -37,6 +37,6 @@
             <button id="button">Editar investigador</button>
             <button id="button">Agregar recomendaciones</button>
         </div>
-        
+
     </body>
 </html>
