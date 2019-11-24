@@ -15,14 +15,14 @@
 		 <p>
              <label>Asunto</label>
              <select id = "miLista">
-               <option value = "1">Irritación</option>
-               <option value = "2">Resequedad nasal</option>
-               <option value = "3">Dolor de cabeza</option>
-               <option value = "4">Tos</option>
-               <option value = "5">Dificultad para respirar</option>
-               <option value = "6">Flujo nasal</option>
-               <option value = "7">Dolor de pecho</option>
-               <option value = "8">Irritación, comezón en la piel</option>
+               <option value = "Asunto">Irritación</option>
+               <option value = "Asunto">Resequedad nasal</option>
+               <option value = "Asunto">Dolor de cabeza</option>
+               <option value = "Asunto">Tos</option>
+               <option value = "Asunto">Dificultad para respirar</option>
+               <option value = "Asunto">Flujo nasal</option>
+               <option value = "Asunto">Dolor de pecho</option>
+               <option value = "Asunto">Irritación, comezón en la piel</option>
              </select>
           </p>
 		<input type="submit" value="Enviar" id="button">
