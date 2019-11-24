@@ -14,23 +14,15 @@
 		<br>
 		 <p>
              <label>Asunto</label>
-<<<<<<< HEAD
-             <select id = "miLista" name="asuntoParam">
-               <option value = "ASMA">ASMA</option>
-               <option value = "IRRITACION">IRRITACION</option>
-               <option value = "GRIPA">GRIPA</option>
-               <option value = "MIEDO">MIEDO</option>
-=======
              <select id = "miLista">
-               <option value = "Asunto">Irritación</option>
-               <option value = "Asunto">Resequedad nasal</option>
-               <option value = "Asunto">Dolor de cabeza</option>
-               <option value = "Asunto">Tos</option>
-               <option value = "Asunto">Dificultad para respirar</option>
-               <option value = "Asunto">Flujo nasal</option>
-               <option value = "Asunto">Dolor de pecho</option>
-               <option value = "Asunto">Irritación, comezón en la piel</option>
->>>>>>> 9d428742cca7f0f3d6fc914e1782f2877c791da1
+               <option value = "1">Irritación</option>
+               <option value = "2">Resequedad nasal</option>
+               <option value = "3">Dolor de cabeza</option>
+               <option value = "4">Tos</option>
+               <option value = "5">Dificultad para respirar</option>
+               <option value = "6">Flujo nasal</option>
+               <option value = "7">Dolor de pecho</option>
+               <option value = "8">Irritación, comezón en la piel</option>
              </select>
           </p>
 		<input type="submit" value="Enviar" id="button">

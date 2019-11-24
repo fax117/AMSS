@@ -1,6 +1,7 @@
 public class Chat {
     private String nameUser;
     private String mensajeUser;
+    private String ausntoUser;
 	/**
 	* Default empty Chat constructor
 	*/
@@ -10,10 +11,11 @@ public class Chat {
 	/**
 	* Default Chat constructor
 	*/
-	public Chat(String nameUser, String mensajeUser) {
+	public Chat(String nameUser, String mensajeUser, String asuntoUser) {
 		super();
 		this.nameUser = nameUser;
 		this.mensajeUser = mensajeUser;
+    this.ausntoUser = asuntoUser;
 	}
 	/**
 	* Returns value of nameUser

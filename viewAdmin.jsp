@@ -29,7 +29,7 @@
   					<c:out value= "${us.nameUser}" />
   				</td>
   				<td>
-  					<c:out value= "${us.mensajeUser}" />
+  					<c:out value= "${us.asuntoUser}" />
   				</td>
           <td>
             <a href="#">Responder</a>
