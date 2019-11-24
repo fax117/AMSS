@@ -21,10 +21,11 @@
             <span></span>
 
             <ul id="menu">
-              <a href="#"><li>Home</li></a>
-              <a href="#"><li>About</li></a>
-              <a href="#"><li>Info</li></a>
+              <a href="#"><li>Inicio</li></a>
+              <a href="#"><li>Cuenta</li></a>
+              <a href="GenerarReporteServlet"><li>Obtener Reportes</li></a>
               <a href="ViewPregunta"><li>Responder</li></a>
+              <a href="index.html"><li>Cerrar Sesión</li></a>          
             </ul>
           </div>
         </nav>
@@ -32,7 +33,7 @@
         </header>
 
         <div id="thingsToDo">
-            <button id="button">Revisar base de datos</button>
+            <a href="GenerarReporteServlet"><button id="button">Obtener Reportes</button></a>
             <a href="./registerRe.jsp"><button id="button">Registrar investigador</button></a>
             <button id="button">Editar investigador</button>
             <button id="button">Agregar recomendaciones</button>

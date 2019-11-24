@@ -22,10 +22,11 @@
             <span></span>
 
             <ul id="menu">
-              <a href="#"><li>Home</li></a>
-              <a href="#"><li>About</li></a>
-              <a href="#"><li>Info</li></a>
-              <a href="TransitionServlet"><li>Consulta</li></a>
+              <a href="#"><li>Inicio</li></a>
+              <a href="#"><li>Cuenta</li></a>
+              <a href="#"><li>Programar Recordatorio</li></a>
+              <a href="TransitionServlet"><li>Consulta un médico</li></a>
+              <a href="index.html"><li>Cerrar Sesión</li></a>
             </ul>
           </div>
         </nav>
