@@ -55,5 +55,8 @@
             <img class="recomIcons" src="img/recomNoSun.svg">
         </div>
 
+        <div class="button">
+            <a href="CuestionarioDiarioBoton"><button>Contestar cuestionario</button></a>
+        </div>
     </body>
 </html>
