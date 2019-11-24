@@ -19,6 +19,8 @@ public class Chat {
     this.asuntoUser = asuntoUser;
     this.idpreguntaUser = idpreguntaUser;
 	}
+
+
 	/**
 	* Returns value of nameUser
 	* @return
@@ -26,6 +28,7 @@ public class Chat {
 	public String getNameUser() {
 		return this.nameUser;
 	}
+
 	/**
 	* Returns value of mensajeUser
 	* @return
@@ -33,6 +36,23 @@ public class Chat {
 	public String getMensajeUser() {
 		return this.mensajeUser;
 	}
+
+	/**
+	* Returns value of asuntoUser
+	* @return
+	*/
+	public String getAsuntoUser() {
+		return this.asuntoUser;
+	}
+
+	/**
+	* Returns value of idpreguntaUser
+	* @return
+	*/
+	public String getIdpreguntaUser() {
+		return this.idpreguntaUser;
+	}
+
 	/**
 	* Sets new value of nameUser
 	* @param
@@ -40,11 +60,28 @@ public class Chat {
 	public void setNameUser(String nameUser) {
 		this.nameUser = nameUser;
 	}
+
 	/**
 	* Sets new value of mensajeUser
 	* @param
 	*/
 	public void setMensajeUser(String mensajeUser) {
 		this.mensajeUser = mensajeUser;
+	}
+
+	/**
+	* Sets new value of asuntoUser
+	* @param
+	*/
+	public void setAsuntoUser(String asuntoUser) {
+		this.asuntoUser = asuntoUser;
+	}
+
+	/**
+	* Sets new value of idpreguntaUser
+	* @param
+	*/
+	public void setIdpreguntaUser(String idpreguntaUser) {
+		this.idpreguntaUser = idpreguntaUser;
 	}
 }
