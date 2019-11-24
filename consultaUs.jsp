@@ -3,8 +3,12 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
-<head>
-	<title>Consulta</title>
+<head> 
+	   <title>Consulta</title>
+	   <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link href="css/resetCss.css" rel ="stylesheet">
+       <link href="css/login.css" rel ="stylesheet">
 </head>
 <body>
 	<h3>Consulta personalizada</h3>
