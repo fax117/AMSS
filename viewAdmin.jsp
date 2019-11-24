@@ -32,7 +32,7 @@
   					<c:out value= "${us.asuntoUser}" />
   				</td>
           <td>
-            <a href="#">Responder</a>
+            <input type="radio" name="preguntaID" value="${us.idpreguntaUser}">
           </td>
   			</tr>
 			</c:forEach>
