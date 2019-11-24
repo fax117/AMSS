@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/RegisterRe")
-public class RegisterRe extends HttpServlet{
+@WebServlet("/ConsultaUs")
+public class ConsultaUs extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -38,20 +38,29 @@ public class RegisterRe extends HttpServlet{
 			//------User register STARTS------
 
 			//retrieve values from register's forms
-			String name = request.getParameter("ReName");
-			String email = request.getParameter("ReEmail");
-			String password = request.getParameter("RePW");
-			String type = request.getParameter("ReType");
 
-			//save values in database
-			int res = stat.executeUpdate("insert into Investigador(Clearance,Nombre, Correo, Contrasena) VALUES (\""
-				+ type + "\",\""+ name + "\", \"" + email + "\", \"" + password + "\");");
+			Cookie[] cookies = request.getCookies();
+
+			ResultSet res1 = stat.executeQuery("SELECT id_usuario FROM Usuario WHERE `Correo electronico` ='" + cookies[1].getValue() + "';");
+
+			if( request.getSession(false).getAttribute("user").equals("usuario") ) {
+				if(res1.next() ) {
+					String usuarioId = res1.getString("id_usuario");
+					String consulta = request.getParameter("consultaTx");
+					String asunto = request.getParameter("asuntoParam");
+					int estado = 0;
+					//save values in database
+					int res = stat.executeUpdate("INSERT INTO Chat(id_usuario, pregunta, contestada, asunto) VALUES (\""
+						+ usuarioId + "\",\""+ consulta + "\",\""+ estado + "\", \""+ asunto + "\");");
+				}
+				response.sendRedirect("./landingUsers.jsp");
+			}
 
 			stat.close();
 			con.close();
 
+			//Cambiar
 
-			response.sendRedirect("./LandingPageAdmin.jsp");
 
 		}
 		catch(Exception e){

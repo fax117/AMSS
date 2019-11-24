@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/RegisterRe")
-public class RegisterRe extends HttpServlet{
+@WebServlet("/ViewPregunta")
+public class ViewChatAdmin extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -16,8 +16,11 @@ public class RegisterRe extends HttpServlet{
 			e.printStackTrace();
 		}
 	}
+	public void doGet(HttpServletRequest request, HttpServletResponse response){
+		updateView(request, response);
+	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response){
+	public void updateView(HttpServletRequest request, HttpServletResponse response){
 
 		try{
 
@@ -35,23 +38,31 @@ public class RegisterRe extends HttpServlet{
 
 			//------Connection to mySQL setup ENDS----------
 
-			//------User register STARTS------
+      ResultSet res = stat.executeQuery("SELECT * FROM Chat;");
+      Vector<Chat> chatList = new Vector<Chat>();
 
-			//retrieve values from register's forms
-			String name = request.getParameter("ReName");
-			String email = request.getParameter("ReEmail");
-			String password = request.getParameter("RePW");
-			String type = request.getParameter("ReType");
+			while(res.next()) {
+          String cond = res.getString("contestada");
+          if ( cond != "1") {
+          String temp = res.getString("id_usuario");
+          String pregunta = res.getString("asunto");
 
-			//save values in database
-			int res = stat.executeUpdate("insert into Investigador(Clearance,Nombre, Correo, Contrasena) VALUES (\""
-				+ type + "\",\""+ name + "\", \"" + email + "\", \"" + password + "\");");
+          Chat aux = new Chat(temp, pregunta);
+    			chatList.add(aux);
+        }
+      }
 
 			stat.close();
 			con.close();
 
+			//Cambiar
+      request.setAttribute("chatList", chatList);
 
-			response.sendRedirect("./LandingPageAdmin.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/viewAdmin.jsp");
+			if(disp!=null){
+				disp.forward(request,response);
+			}
+
 
 		}
 		catch(Exception e){
