@@ -18,18 +18,15 @@
 
         <section id="start">
             <div class="centrardiv"> <!-- arreglar un poco más -->
-                <form>
+                <form method="post" action="./CuestionarioInicial">
                     <div id="order">
-                        <p class="lefty question">Encuesta por llenar a diario:</p>
+                        <p class="lefty question">¿Qué encuesta le corresponde llenar?</p>
                         <div class="lefty question">
                             <input class="lefty" type="radio" name="enfermedad" value="Asma">
                             <p class="lefty">Asma</p>
                             <br><br>
                             <input class="lefty" type="radio" name="enfermedad" value="EPOC">
                             <p class="lefty">EPOC</p>
-                            <br><br>
-                            <input class="lefty" type="radio" name="enfermedad" value="Sano">
-                            <p class="lefty">Sano</p>
                             <br><br>
                             <input class="lefty" type="radio" name="enfermedad" value="Otra">
                             <p class="lefty">Otra</p>
