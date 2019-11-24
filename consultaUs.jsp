@@ -3,7 +3,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
-<head> 
+<head>
 	   <title>Consulta</title>
 	   <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,14 +19,14 @@
 		 <p>
              <label>Asunto</label>
              <select id = "miLista">
-               <option value = "1">Irritación</option>
-               <option value = "2">Resequedad nasal</option>
-               <option value = "3">Dolor de cabeza</option>
-               <option value = "4">Tos</option>
-               <option value = "5">Dificultad para respirar</option>
-               <option value = "6">Flujo nasal</option>
-               <option value = "7">Dolor de pecho</option>
-               <option value = "8">Irritación, comezón en la piel</option>
+               <option value = "Irritacion">Irritación</option>
+               <option value = "Resquedda nasal">Resequedad nasal</option>
+               <option value = "Dolor">Dolor de cabeza</option>
+               <option value = "Tos">Tos</option>
+               <option value = "Dificultad para respirar">Dificultad para respirar</option>
+               <option value = "Flujo nasal">Flujo nasal</option>
+               <option value = "Dolor de pecho">Dolor de pecho</option>
+               <option value = "Irritación, comezón en la piel">Irritación, comezón en la piel</option>
              </select>
           </p>
 		<input type="submit" value="Enviar" id="button">

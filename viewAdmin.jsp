@@ -16,6 +16,7 @@
 </style>
 </head>
 <body>
+	<form action="./AnswerAdmin" method="post">
 		<table style="width:100%">
   		<caption>Cuestionarios</caption>
   		<tr>
@@ -37,5 +38,7 @@
   			</tr>
 			</c:forEach>
 		</table>
+		<input type="submit" name="boton" value="siguiente">
+	</form>
 </body>
 </html>

@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/AnswerAdmin")
-public class AnswerAdmin extends HttpServlet{
+@WebServlet("/ConsultaUs")
+public class RespuestaConsultaAdmin extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -37,26 +37,22 @@ public class AnswerAdmin extends HttpServlet{
 
 			//------User register STARTS------
 
+			//retrieve values from register's forms
 
-			String id_pregunta = request.getParameter("preguntaID");
+			Cookie[] cookies = request.getCookies();
 
-			ResultSet res = stat.executeQuery("SELECT pregunta FROM Chat WHERE id_pregunta='" + id_pregunta + "';");
-			Vector<Pregunta> preguntaList = new Vector<Pregunta>();
+			ResultSet res1 = stat.executeQuery("SELECT id_usuario FROM Usuario WHERE `Correo electronico` ='" + cookies[1].getValue() + "';");
 
-			while(res.next() ) {
-				String pregunta = res.getString("pregunta");
-
-				Pregunta aux = new Pregunta(pregunta, id_pregunta);
-				preguntaList.add(aux);
-			}
-
-			request.setAttribute("preguntaList", preguntaList);
-
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/AdminRespuesta.jsp");
-			if(disp!=null){
-				disp.forward(request,response);
-			}
-
+				if(res1.next() ) {
+					String usuarioId = res1.getString("id_usuario");
+					String consulta = request.getParameter("consultaTx");
+					String asunto = request.getParameter("asuntoParam");
+					int estado = 1;
+					//save values in database
+					int res = stat.executeUpdate("INSERT INTO Chat(id_usuario, pregunta, contestada, asunto) VALUES (\""
+						+ usuarioId + "\",\""+ consulta + "\",\""+ estado + "\", \""+ asunto + "\");");
+				}
+				response.sendRedirect("./LandingPageAdmin.jsp");
 
 			stat.close();
 			con.close();
