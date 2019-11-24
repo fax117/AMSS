@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/ConsultaUs")
+@WebServlet("/RespuestaConsultaAdmin")
 public class RespuestaConsultaAdmin extends HttpServlet{
 
 	public void init(ServletConfig config){
