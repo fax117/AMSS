@@ -70,7 +70,7 @@
                             <br>
                             <p class="lefty">Cantidad al día</p>
                             <br>
-                            <select class="lefty">
+                            <select class="lefty" name="cantidadCigarros">
                                 <option value="uno">1</option>
                                 <option value="dos">2</option>
                                 <option value="tres">3</option>
@@ -79,10 +79,10 @@
                         </div>
                         <p class="lefty question">Si dejó de fumar, ¿hace cuánto?</p>
                         <div class="lefty question">
-                            <select class="lefty">
-                                <option value="menosAño">-1 año</option>
-                                <option value="año">1 año</option>
-                                <option value="masAño">+1 año</option>
+                            <select class="lefty" name="tiempoSinFumar">
+                                <option value="menosAno">-1 año</option>
+                                <option value="ano">1 año</option>
+                                <option value="masAno">+1 año</option>
                             </select>
                         </div>
                         <p class="lefty question">¿Convive con fumadores?</p>
@@ -106,42 +106,42 @@
                         <div class="lefty question">
                             <p class="lefty question">¿Alguna otra enfermedad diagnosticada?</p>
                             <br>
-                            <input class="lefty" type="checkbox" name="enfermedad1" value="Broncon">
+                            <input class="lefty" type="checkbox" name="enfermedadDiag" value="Broncon">
                             <p class="lefty">Bronconeumonía</p>
                             <br><br><br>
-                            <input class="lefty" type="checkbox" name="enfermedad2" value="Neumo">
+                            <input class="lefty" type="checkbox" name="enfermedadDiag" value="Neumo">
                             <p class="lefty">Neumonía</p>
                             <br>
                             <br>
-                            <input class="lefty" type="checkbox" name="enfermedad3" value="BronCro">
+                            <input class="lefty" type="checkbox" name="enfermedadDiag" value="BronCro">
                             <p class="lefty">Bronquitis crónica</p>
                             <br>
                             <br>
-                            <input class="lefty" type="checkbox" name="enfermedad4" value="Enfisema">
+                            <input class="lefty" type="checkbox" name="enfermedadDiag" value="Enfisema">
                             <p class="lefty">Enfisema</p>
                             <br>
                             <br>
-                            <input class="lefty" type="checkbox" name="enfermedad5" value="Asma">
+                            <input class="lefty" type="checkbox" name="enfermedadDiag" value="Asma">
                             <p class="lefty">Asma</p>
                             <br>
                             <br>
-                            <input class="lefty" type="checkbox" name="enfermedad6" value="Sinusitis">
+                            <input class="lefty" type="checkbox" name="enfermedadDiag" value="Sinusitis">
                             <p class="lefty">Sinusitis</p>
                             <br>
                             <br>
-                            <input class="lefty" type="checkbox" name="enfermedad7" value="Rinitis">
+                            <input class="lefty" type="checkbox" name="enfermedadDiag" value="Rinitis">
                             <p class="lefty">Rinitis</p>
                             <br>
                             <br>
-                            <input class="lefty" type="checkbox" name="enfermedad8" value="Polipos">
+                            <input class="lefty" type="checkbox" name="enfermedadDiag" value="Polipos">
                             <p class="lefty">Pólipos</p>
                             <br>
                             <br>
-                            <input class="lefty" type="checkbox" name="enfermedad9" value="Cancer">
+                            <input class="lefty" type="checkbox" name="enfermedadDiag" value="Cancer">
                             <p class="lefty">Cáncer</p>
                             <br>
                             <br>
-                            <input class="lefty" type="checkbox" name="enfermedad10" value="Tuber">
+                            <input class="lefty" type="checkbox" name="enfermedadDiag" value="Tuber">
                             <p class="lefty">Tuberculosis</p>
                             <br><br>
                             <p class="lefty">En caso de cáncer, indicar tipo</p>
@@ -165,7 +165,6 @@
                             <br>
                             <input type="text" name="dondeEjercicio" maxlength="500">
                         </div>
-                        <!-- <textarea class="lefty inp"></textarea> -->
                         <input type="submit" value="Guardar" id="button">                        
                     </div>
                 </form>
