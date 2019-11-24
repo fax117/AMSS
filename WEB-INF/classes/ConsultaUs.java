@@ -47,15 +47,16 @@ public class ConsultaUs extends HttpServlet{
 			if(res1.next() ) {
 				String usuarioId = res1.getString("id_usuario");
 				String consulta = request.getParameter("consultaTx");
+				int estado = 0;
 				//save values in database
-				int res = stat.executeUpdate("INSERT INTO Chat(id_usuario, pregunta) VALUES (\""
-					+ usuarioId + "\",\""+ consulta + "\");");
+				int res = stat.executeUpdate("INSERT INTO Chat(id_usuario, pregunta, contestada) VALUES (\""
+					+ usuarioId + "\",\""+ consulta + "\",\""+ estado + "\");");
 			}
 
 			stat.close();
 			con.close();
 
-
+			//Cambiar
 			response.sendRedirect("./landingUsers.jsp");
 
 		}
