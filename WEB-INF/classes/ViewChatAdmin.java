@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/ConsultaUs")
-public class ConsultaUs extends HttpServlet{
+@WebServlet("/ViewPregunta")
+public class ViewChatAdmin extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -16,8 +16,11 @@ public class ConsultaUs extends HttpServlet{
 			e.printStackTrace();
 		}
 	}
+	public void doGet(HttpServletRequest request, HttpServletResponse response){
+		updateView(request, response);
+	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response){
+	public void updateView(HttpServletRequest request, HttpServletResponse response){
 
 		try{
 
@@ -35,30 +38,27 @@ public class ConsultaUs extends HttpServlet{
 
 			//------Connection to mySQL setup ENDS----------
 
-			//------User register STARTS------
+      ResultSet res = stat.executeQuery("SELECT * FROM Chat;");
+      Vector<Chat> chatList = new Vector<Chat>();
 
-			//retrieve values from register's forms
+			while(res.next()) {
+        String temp = res.getString("id_usuario");
+        String pregunta = res.getString("pregunta");
 
-			Cookie[] cookies = request.getCookies();
+        Chat aux = new Chat(temp, pregunta);
+  			chatList.add(aux);
+      }
 
-			ResultSet res1 = stat.executeQuery("SELECT id_usuario FROM Usuario WHERE `Correo electronico` ='" + cookies[1].getValue() + "';");
-
-			if( request.getSession(false).getAttribute("user").equals("usuario") ) {
-				if(res1.next() ) {
-					String usuarioId = res1.getString("id_usuario");
-					String consulta = request.getParameter("consultaTx");
-					int estado = 0;
-					//save values in database
-					int res = stat.executeUpdate("INSERT INTO Chat(id_usuario, pregunta, contestada) VALUES (\""
-						+ usuarioId + "\",\""+ consulta + "\",\""+ estado + "\");");
-				}
-				response.sendRedirect("./landingUsers.jsp");
-			}
-			
 			stat.close();
 			con.close();
 
 			//Cambiar
+      request.setAttribute("chatList", chatList);
+
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/viewAdmin.jsp");
+			if(disp!=null){
+				disp.forward(request,response);
+			}
 
 
 		}

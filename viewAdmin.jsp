@@ -16,22 +16,22 @@
 </style>
 </head>
 <body>
-	<table style="width:100%">
+		<table style="width:100%">
   		<caption>Cuestionarios</caption>
   		<tr>
     		<th>Nombre</th>
     		<th>Status</th>
   		</tr>
-  		<c:forEach items="${requestScope.chat}"var="us">
-  		<tr>
-  			<td>
-  				<c:out value= "${us.id_usuario}">
-  			</td>
-  			<td>
-  				<c:out value= "${us.contestada}">
-  			</td>
-  		</tr>
-  	</c:forEach>
-</table>
+  		<c:forEach items="${requestScope.chatList}" var="us">
+  			<tr>
+  				<td>
+  					<c:out value= "${us.nameUser}" />
+  				</td>
+  				<td>
+  					<c:out value= "${us.mensajeUser}" />
+  				</td>
+  			</tr>
+			</c:forEach>
+		</table>
 </body>
 </html>
