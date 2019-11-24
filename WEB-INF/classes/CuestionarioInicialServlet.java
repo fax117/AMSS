@@ -21,6 +21,15 @@ public class CuestionarioInicialServlet extends HttpServlet{
 
 		try{
 
+			String dbbase = getServletContext().getInitParameter("base");
+			String dbusuario = getServletContext().getInitParameter("usuario");
+			String dbpassword = getServletContext().getInitParameter("pass");
+			Class.forName("com.mysql.jdbc.Driver");
+
+			String url = "jdbc:mysql://localhost/"+dbbase+"?useSSL=false&allowPublicKeyRetrieval=true";
+			Connection con = DriverManager.getConnection(url,dbusuario,dbpassword);
+			Statement stat = con.createStatement();
+
 		}
 		catch(Exception e){
 			e.printStackTrace();
