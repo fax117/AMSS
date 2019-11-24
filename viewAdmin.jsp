@@ -21,6 +21,7 @@
   		<tr>
     		<th>Nombre</th>
     		<th>Status</th>
+        <th>Contestar</th>
   		</tr>
   		<c:forEach items="${requestScope.chatList}" var="us">
   			<tr>
@@ -30,6 +31,9 @@
   				<td>
   					<c:out value= "${us.mensajeUser}" />
   				</td>
+          <td>
+            <a href="#"></a>
+          </td>
   			</tr>
 			</c:forEach>
 		</table>
