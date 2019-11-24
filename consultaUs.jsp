@@ -14,11 +14,11 @@
 		<br>
 		 <p>
              <label>Asunto</label>
-             <select id = "miLista">
-               <option value = "1">ASMA</option>
-               <option value = "2">IRRITACION</option>
-               <option value = "3">GRIPA</option>
-               <option value = "4">MIEDO</option>
+             <select id = "miLista" name="asuntoParam">
+               <option value = "ASMA">ASMA</option>
+               <option value = "IRRITACION">IRRITACION</option>
+               <option value = "GRIPA">GRIPA</option>
+               <option value = "MIEDO">MIEDO</option>
              </select>
           </p>
 		<input type="submit" value="Enviar" id="button">

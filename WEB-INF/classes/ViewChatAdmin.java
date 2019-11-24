@@ -45,7 +45,7 @@ public class ViewChatAdmin extends HttpServlet{
           String cond = res.getString("contestada");
           if ( cond != "1") {
           String temp = res.getString("id_usuario");
-          String pregunta = res.getString("pregunta");
+          String pregunta = res.getString("asunto");
 
           Chat aux = new Chat(temp, pregunta);
     			chatList.add(aux);
