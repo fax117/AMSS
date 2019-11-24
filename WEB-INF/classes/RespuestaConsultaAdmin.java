@@ -46,11 +46,10 @@ public class RespuestaConsultaAdmin extends HttpServlet{
 				if(res1.next() ) {
 					String usuarioId = res1.getString("id_usuario");
 					String consulta = request.getParameter("consultaTx");
-					String asunto = request.getParameter("asuntoParam");
+					String id_pregunta = request.getParameter("id_pregunta");
 					int estado = 1;
 					//save values in database
-					int res = stat.executeUpdate("INSERT INTO Chat(id_usuario, pregunta, contestada, asunto) VALUES (\""
-						+ usuarioId + "\",\""+ consulta + "\",\""+ estado + "\", \""+ asunto + "\");");
+					int res = stat.executeUpdate("UPDATE Chat SET respuesta='"+ consulta +"', contestada='"+ estado +"' WHERE id_pregunta='"+ id_pregunta + "';");
 				}
 				response.sendRedirect("./LandingPageAdmin.jsp");
 
