@@ -67,176 +67,6 @@ public class LoginServlet extends HttpServlet{
 				if(username.equals(userList.get(i).getEmail())){
 					//username exists in database
 					if(password.equals(userList.get(i).getPassword())){
-						//user & password combination found in mySQL table
-
-						//prepare Vector to create initial .jsp page FOLLOWS EXAMPLE TO CREATE VECTOR INJECTIONS TO POPULATE JSP WITH DATABASE INFO ->->->->->->->->
-						/*
-
-						ResultSet clientContents = stat.executeQuery("SELECT * from client join users on id_User=userID;");
-						Vector<Client> clientList = new Vector<Client>();
-						Vector<String> usernameList = new Vector<String>();
-
-						while(clientContents.next()){
-							Client aux = new Client(Long.valueOf(clientContents.getString("CompanyID")), clientContents.getString("name"), clientContents.getString("contact"), Long.valueOf(clientContents.getString("id_User")));
-							clientList.add(aux);
-							String responsibleUsername = clientContents.getString("username");
-							usernameList.add(responsibleUsername);
-						}
-						clientList.trimToSize();
-						usernameList.trimToSize();
-
-						if(clientList.size() > 3){
-							Vector<Client> alterclientList = new Vector<Client>();
-							Vector<String> alterusernameList = new Vector<String>();
-							for(int j=3; j>0; j--){
-								alterclientList.add(clientList.get(clientList.size()-j));
-								alterusernameList.add(usernameList.get(usernameList.size()-j));
-							}
-							request.setAttribute("clientList",alterclientList);
-							request.setAttribute("usernameList",alterusernameList);
-						}
-						else{
-							request.setAttribute("clientList",clientList);
-							request.setAttribute("usernameList",usernameList);
-						}
-
-						ResultSet trialContents = stat.executeQuery("select * from trial join client on idClient=CompanyId;");
-						Vector<Trial> trialList = new Vector<Trial>();
-						Vector<String> clientNamesList = new Vector<String>();
-
-						while(trialContents.next()){
-
-							//Date format correction
-							String reformatDate = trialContents.getString("trialDate");
-							//2018-mm-dd -> dd-mm-2018
-							String day = reformatDate.substring(8);
-							String month = reformatDate.substring(5,7);
-							String year =  reformatDate.substring(0,4);
-							reformatDate = day + "/" + month + "/" + year;
-							//Date format correction ends
-
-							Trial aux = new Trial(Long.valueOf(trialContents.getString("TrialID")), trialContents.getString("location"), reformatDate, Long.valueOf(trialContents.getString("idClient")));
-							trialList.add(aux);
-							String clientName = trialContents.getString("name");
-							clientNamesList.add(clientName);
-						}
-
-						if(trialList.size() > 3){
-							Vector<Trial> altertrialList = new Vector<Trial>();
-							Vector<String> alterclientNamesList = new Vector<String>();
-							for(int j=3; j>0; j--){
-								altertrialList.add(trialList.get(trialList.size()-j));
-								alterclientNamesList.add(clientNamesList.get(clientNamesList.size()-j));
-							}
-							request.setAttribute("trialList",altertrialList);
-							request.setAttribute("clientNamesList",alterclientNamesList);
-						}
-						else{
-							request.setAttribute("trialList",trialList);
-							request.setAttribute("clientNamesList",clientNamesList);
-						}
-
-
-						ResultSet employeeContents = stat.executeQuery("select * from employee, trial, client where idTrial = TrialId and idClient = CompanyId;");
-						Vector<Employee> employeeList = new Vector<Employee>();
-						Vector<String> trialList2 = new Vector<String>();
-						Vector<String> clientNamesList2 = new Vector<String>();
-
-						while(employeeContents.next()){
-
-							//Date format correction
-							String reformatDate = employeeContents.getString("admission_date");
-							//2018-mm-dd -> dd-mm-2018
-							String day = reformatDate.substring(8);
-							String month = reformatDate.substring(5,7);
-							String year =  reformatDate.substring(0,4);
-							reformatDate = day + "/" + month + "/" + year;
-							//Date format correction ends
-
-							Employee aux = new Employee(Long.valueOf(employeeContents.getString("Employee_Id")), reformatDate, employeeContents.getString("company_role"), employeeContents.getString("name"), Double.valueOf(employeeContents.getString("salary")), Long.valueOf(employeeContents.getString("idTrial")), employeeContents.getString("contractCode"), Double.valueOf(employeeContents.getString("settlement")), Long.valueOf(employeeContents.getString("company_id")));
-							employeeList.add(aux);
-							String trialDate = employeeContents.getString("trialDate");
-							trialList2.add(trialDate);
-							String clientName2 = employeeContents.getString("client.name");
-							clientNamesList2.add(clientName2);
-						}
-
-						if(employeeList.size() > 3){
-							Vector<Employee> alteremployeeList = new Vector<Employee>();
-							Vector<String> altertrialList2 = new Vector<String>();
-							Vector<String> alterclientNamesList2 = new Vector<String>();
-							for(int j=3; j>0; j--){
-								alteremployeeList.add(employeeList.get(employeeList.size()-j));
-								altertrialList2.add(trialList2.get(trialList2.size()-j));
-								alterclientNamesList2.add(clientNamesList2.get(clientNamesList2.size()-j));
-							}
-							request.setAttribute("employeeList",alteremployeeList);
-							request.setAttribute("trialList2",altertrialList2);
-							request.setAttribute("clientNamesList2",alterclientNamesList2);
-						}
-						else{
-							request.setAttribute("employeeList",employeeList);
-							request.setAttribute("trialList2",trialList2);
-							request.setAttribute("clientNamesList2",clientNamesList2);
-						}
-
-						ResultSet lawsuitContents = stat.executeQuery("select * from lawsuit join trial on trial_id = TrialId;");
-						Vector<LawsuitQuery> lawsuitList = new Vector<LawsuitQuery>();
-
-						while(lawsuitContents.next()){
-							LawsuitQuery aux = new LawsuitQuery(Long.valueOf(lawsuitContents.getString("LawsuitID")), lawsuitContents.getString("name"), lawsuitContents.getString("affair"), lawsuitContents.getString("address"), Long.valueOf(lawsuitContents.getString("trial_id")), lawsuitContents.getString("location"));
-							lawsuitList.add(aux);
-						}
-
-						if(lawsuitList.size() > 3){
-							Vector<LawsuitQuery> alterlawsuitList = new Vector<LawsuitQuery>();
-							for(int j=3; j>0; j--){
-								alterlawsuitList.add(lawsuitList.get(lawsuitList.size()-j));
-							}
-							request.setAttribute("lawsuitList", alterlawsuitList);
-						}
-						else{
-							request.setAttribute("lawsuitList", lawsuitList);
-						}
-
-						ResultSet fileContents = stat.executeQuery("select * from file join lawsuit on lawsuit_id = LawsuitId;");
-						Vector<FileQuery> fileList = new Vector<FileQuery>();
-
-						while(fileContents.next()){
-							FileQuery aux = new FileQuery(Long.valueOf(fileContents.getString("idFile")), fileContents.getString("name"), fileContents.getString("creation_date"), Long.valueOf(fileContents.getString("lawsuit_id")), fileContents.getString("Lawsuit.name"));
-							fileList.add(aux);
-						}
-						if(fileList.size() > 3){
-							Vector<FileQuery> alterfileList = new Vector<FileQuery>();
-							for(int j=3; j>0; j--){
-								alterfileList.add(fileList.get(fileList.size()-j));
-							}
-							request.setAttribute("fileList", alterfileList);
-						}
-						else{
-							request.setAttribute("fileList", fileList);
-						}
-						*/
-
-						/*
-						if(userList.get(i).getRole().equals("Super Empleado")){
-							//Super Empleado Login
-							loginSuccess = true;
-							RequestDispatcher disp = getServletContext().getRequestDispatcher("/admins.jsp");
-							if(disp!=null){
-								disp.forward(request,response);
-							}
-						}
-						else if(userList.get(i).getRole().equals("Empleado")){
-							//Empleado regular Login
-							loginSuccess = true;
-							RequestDispatcher disp = getServletContext().getRequestDispatcher("/empleados.jsp");
-							if(disp!=null){
-								disp.forward(request,response);
-							}
-						}
-						*/
-
 						loginSuccess = 1; // User login
 					}
 				}
@@ -262,11 +92,12 @@ public class LoginServlet extends HttpServlet{
 
 			if(loginSuccess == 1){
 				HttpSession session = request.getSession();
-				session.setAttribute("user", username);
+				session.setAttribute("user", "usuario");
 				//setting session to expiry in 30 mins
 				session.setMaxInactiveInterval(30*60);
 				Cookie userName = new Cookie("user", username );
 				userName.setMaxAge(30*60);
+				userName.setPath("/");
 				response.addCookie(userName);
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
 				if(disp!=null){
@@ -275,11 +106,12 @@ public class LoginServlet extends HttpServlet{
 			}
 			else if(loginSuccess == 2){
 				HttpSession session = request.getSession();
-				session.setAttribute("user", username);
+				session.setAttribute("user", "admin");
 				//setting session to expiry in 30 mins
 				session.setMaxInactiveInterval(30*60);
 				Cookie userName = new Cookie("user", username );
 				userName.setMaxAge(30*60);
+				userName.setPath("/");
 				response.addCookie(userName);
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/LandingPageAdmin.jsp");
 				if(disp!=null){
@@ -288,11 +120,12 @@ public class LoginServlet extends HttpServlet{
 			}
 			else if(loginSuccess == 3){
 				HttpSession session = request.getSession();
-				session.setAttribute("user", username);
+				session.setAttribute("user", "investigador");
 				//setting session to expiry in 30 mins
 				session.setMaxInactiveInterval(30*60);
 				Cookie userName = new Cookie("user", username);
 				userName.setMaxAge(30*60);
+				userName.setPath("/");
 				response.addCookie(userName);
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingPageResearcher.jsp");
 				if(disp!=null){
