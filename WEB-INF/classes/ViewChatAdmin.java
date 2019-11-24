@@ -42,11 +42,14 @@ public class ViewChatAdmin extends HttpServlet{
       Vector<Chat> chatList = new Vector<Chat>();
 
 			while(res.next()) {
-        String temp = res.getString("id_usuario");
-        String pregunta = res.getString("pregunta");
+          String cond = res.getString("contestada");
+          if ( cond != "1") {
+          String temp = res.getString("id_usuario");
+          String pregunta = res.getString("pregunta");
 
-        Chat aux = new Chat(temp, pregunta);
-  			chatList.add(aux);
+          Chat aux = new Chat(temp, pregunta);
+    			chatList.add(aux);
+        }
       }
 
 			stat.close();
