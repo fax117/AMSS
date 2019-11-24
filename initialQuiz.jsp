@@ -97,11 +97,11 @@
                             <br>
                             <p class="lefty">¿Dónde?</p>
                             <br>
-                            <input type="textarea" name="dondeFumadores">
+                            <input type="text" name="dondeFumadores" maxlength="500">
                         </div>
                         <div class="lefty question">
                             <p class="lefty question">Otro tipo de humo al que esté expuesto/a</p>
-                            <input class="lefty" type="textarea" name="otrosHumos">
+                            <input class="lefty" type="textarea" name="otrosHumos" maxlength="500">
                         </div>
                         <div class="lefty question">
                             <p class="lefty question">¿Alguna otra enfermedad diagnosticada?</p>
@@ -145,7 +145,7 @@
                             <p class="lefty">Tuberculosis</p>
                             <br><br>
                             <p class="lefty">En caso de cáncer, indicar tipo</p>
-                            <input class="lefty" type="text" name="tipoCancer">
+                            <input class="lefty" type="text" name="tipoCancer" maxlength="500">
                             <br><br>
                             <p class="lefty question">¿Algún otra enfermedad?</p>
                             <br><br>
@@ -163,7 +163,7 @@
                             <br>
                             <p class="lefty">¿Dónde?</p>
                             <br>
-                            <input type="textarea" name="dondeEjercicio">
+                            <input type="text" name="dondeEjercicio" maxlength="500">
                         </div>
                         <!-- <textarea class="lefty inp"></textarea> -->
                         <input type="submit" value="Guardar" id="button">                        
