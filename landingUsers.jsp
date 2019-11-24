@@ -29,7 +29,7 @@
             </ul>
           </div>
         </nav>
-            <img class="header-icons" id="profile-icon" src="img/profile-icon.svg">
+            <a href="profile.jsp"><img class="header-icons" id="profile-icon" src="img/profile-icon.svg"></a>
         </header>
 
         <div class="irpsDisplay">
