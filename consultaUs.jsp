@@ -9,7 +9,7 @@
 <body>
 	<h3>Consulta personalizada</h3>
 	<p>Por favor escribe aquí tus sintomas</p>
-	<form method="post" action="/ConsultaUs">
+	<form method="post" action="./ConsultaUs">
 		<textarea maxlength="550" rows="10" cols="50" name="consultaTx"></textarea>
 		<br>
 		<input type="submit" value="Enviar" id="button">

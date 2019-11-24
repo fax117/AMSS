@@ -25,7 +25,7 @@
               <a href="#"><li>Home</li></a>
               <a href="#"><li>About</li></a>
               <a href="#"><li>Info</li></a>
-              <a href="consultaUs.jsp"><li>Consulta</li></a>
+              <a href="TransitionServlet"><li>Consulta</li></a>
             </ul>
           </div>
         </nav>

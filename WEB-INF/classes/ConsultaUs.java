@@ -6,7 +6,7 @@ import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/ConsultaUs")
-public class RegisterRe extends HttpServlet{
+public class ConsultaUs extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -41,18 +41,16 @@ public class RegisterRe extends HttpServlet{
 
 			Cookie[] cookies = request.getCookies();
 
-			for (int i = 0; i < cookies.length; i++) {
-  			String cName = cookies[i].getName();
-  			String cValue = cookies[i].getValue();
+			ResultSet res1 = stat.executeQuery("SELECT id_usuario FROM Usuario WHERE `Correo electronico` ='" + cookies[1].getValue() + "';");
+
+
+			if(res1.next() ) {
+				String usuarioId = res1.getString("id_usuario");
+				String consulta = request.getParameter("consultaTx");
+				//save values in database
+				int res = stat.executeUpdate("INSERT INTO Chat(id_usuario, pregunta) VALUES (\""
+					+ usuarioId + "\",\""+ consulta + "\");");
 			}
-
-			ResultSet res1 = stat.executeQuery("SELECT id_usuario FROM Usuario WHERE `Correo electronico` ='' " + cValue + "'';");
-
-			String usuarioId = res1.getString("id_usuario");
-			String consulta = request.getParameter("consultaTx");
-			//save values in database
-			int res = stat.executeUpdate("insert into Chat(id_usuario, pregunta) VALUES (\""
-				+ name + "\",\""+ consulta + "\");");
 
 			stat.close();
 			con.close();
