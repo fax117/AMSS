@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/GenerarReporteServlet")
-public class GenerarReporteServlet extends HttpServlet{
+@WebServlet("/ExecuteGenerarReporte")
+public class ExecuteGenerarReporte extends HttpServlet{
 
     public void init(ServletConfig config){
 		try{
@@ -19,9 +19,8 @@ public class GenerarReporteServlet extends HttpServlet{
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response){
 		doPost(request, response);
-	}
-    
-    
+    }
+
     public void doPost(HttpServletRequest request, HttpServletResponse response){
 		FileWriter writer;
 		try{
@@ -40,18 +39,13 @@ public class GenerarReporteServlet extends HttpServlet{
 			
             //------Connection to mySQL setup ENDS----------
 			
-			
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/generateReport.jsp");
-			if(disp!=null){
-				disp.forward(request,response);
-			}
-
-            /*String initialDate = request.getParameter("initialDate");
+		
+            String initialDate = request.getParameter("initialDate");
 			String endDate = request.getParameter("endDate");
-			String enclosed = "$";
-			String linesTerminated = "\n";
-			String path = "D:/Documentos/BlocsDeNotas/"+initialDate+".csv";
-			ResultSet rec = stat.executeQuery("SELECT * FROM cuestionarioasma WHERE fecha BETWEEN \" "+ initialDate + " \" and \" "+ endDate +" \" INTO OUTFILE  \" "+ path +" \"  FIELDS ENCLOSED BY \" "+enclosed+" \"  LINES TERMINATED BY \" "+linesTerminated+" \" ;");
+			//String enclosed = "$";
+			//String linesTerminated = "\n";
+			String path ="../webapps/IRPS/csv/Natalia.csv";
+            ResultSet rec = stat.executeQuery("SELECT * FROM cuestionarioasma WHERE fecha BETWEEN \" "+ initialDate + " \" and \" "+ endDate +" \" ");/* INTO OUTFILE  \" "+ path +" \" FIELDS ENCLOSED BY \" "+enclosed+" \"  LINES TERMINATED BY \" "+linesTerminated+" \" ;");*/
 			
 		
 			try {
@@ -91,18 +85,25 @@ public class GenerarReporteServlet extends HttpServlet{
 			
 				System.out.println("Write success!");
 			
-				} catch (IOException e) {
-		
-				e.printStackTrace();
-				
-				}*/
+            } catch (IOException e) {
+    
+            e.printStackTrace();
+            
+            }
 
-			
-		
-        }
+            
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/csvGenerated.jsp");
+			if(disp!=null){
+				disp.forward(request,response);
+			}
+
+        } 
         catch(Exception e){
             e.printStackTrace();
         }
-    }
 
+    }
+                
 }
+
+    

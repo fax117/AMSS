@@ -18,11 +18,11 @@
         <section id="start">
             <div class="centrardiv">
                 <h2>Generar reportes de:</h2>
-                <form action="/action_page.php">
+                <form method="get" target="_blank" action="./ExecuteGenerarReporte">
                     <input type="date" name="initialDate" id="date">
                     <h2>a:</h2>
                     <input type="date" name="endDate" id="date">
-                    <input type="submit" id ="button" value="Generar reporte">
+                    <input type="submit" id ="button" value="GenerarReporte">
                 </form>
             </div>  
         </section>
