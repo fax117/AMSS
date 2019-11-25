@@ -1,11 +1,11 @@
 public class Researcher{
-	private long id_Researcher;
+	private Long id_Researcher;
 	private int clearance;
 	private String name;
 	private String email;
 	private String password;
 
-	public Researcher(long id_Researcher, int clearance, String name, String email, String password){
+	public Researcher(Long id_Researcher, int clearance, String name, String email, String password){
 		this.id_Researcher = id_Researcher;
 		this.clearance = clearance;
 		this.name = name;
@@ -13,11 +13,17 @@ public class Researcher{
 		this.password = password;
 	}
 
-	public void setId_Researcher(long id_Researcher){
+	public Researcher(String name, String email, Long id_Researcher){
+		this.name = name;
+		this.email = email;
+		this.password = password;
+	}
+
+	public void setId_Researcher(Long id_Researcher){
 		this.id_Researcher = id_Researcher;
 	}
 
-	public long getId_Researcher(){
+	public Long getId_Researcher(){
 		return id_Researcher;
 	}
 
