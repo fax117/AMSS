@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/ViewPregunta")
-public class ViewChatAdmin extends HttpServlet{
+@WebServlet("/TransitionRespuesta")
+public class ViewAnswerUser extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -38,21 +38,33 @@ public class ViewChatAdmin extends HttpServlet{
 
 			//------Connection to mySQL setup ENDS----------
 
-      ResultSet res = stat.executeQuery("SELECT * FROM Chat;");
-      Vector<Chat> chatList = new Vector<Chat>();
+			Vector<Chat> chatList = new Vector<Chat>();
+			Cookie[] cookies = request.getCookies();
+			ResultSet res1 = stat.executeQuery("SELECT id_usuario FROM Usuario WHERE `Correo electronico` ='" + cookies[1].getValue() + "';");
 
-			while(res.next()) {
-          String cond = res.getString("contestada");
-          if ( cond.equals("0") ) {
-          String temp = res.getString("id_usuario");
-          String asunto = res.getString("asunto");
-					String pregunta = res.getString("pregunta");
-					String id_pregunta = res.getString("id_pregunta");
+			if (res1.next() ) {
+				String id_user = res1.getString("id_usuario");
+				ResultSet res = stat.executeQuery("SELECT * FROM Chat WHERE id_usuario='" + id_user +"';");
 
-          Chat aux = new Chat(temp, pregunta, asunto, id_pregunta);
-    			chatList.add(aux);
-        }
-      }
+
+				while(res.next()) {
+	          String cond = res.getString("contestada");
+	          if ( cond.equals("1") ) {
+	          String temp = res.getString("id_usuario");
+	          String asunto = res.getString("asunto");
+						String pregunta = res.getString("pregunta");
+						String respuesta = res.getString("respuesta");
+						String id_pregunta = res.getString("id_pregunta");
+
+	          Chat aux = new Chat(temp, pregunta, asunto, respuesta, id_pregunta);
+	    			chatList.add(aux);
+	        }
+	      }
+			}
+
+
+
+
 
 			stat.close();
 			con.close();
@@ -60,7 +72,7 @@ public class ViewChatAdmin extends HttpServlet{
 			//Cambiar
       request.setAttribute("chatList", chatList);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/viewAdmin.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/viewRespuestaUser.jsp");
 			if(disp!=null){
 				disp.forward(request,response);
 			}

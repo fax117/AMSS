@@ -26,6 +26,7 @@
               <a href="#"><li>About</li></a>
               <a href="#"><li>Info</li></a>
               <a href="TransitionServlet"><li>Consulta</li></a>
+              <a href="TransitionRespuesta"><li>Ver Respuestas</li></a>
             </ul>
           </div>
         </nav>
@@ -55,5 +56,8 @@
             <img class="recomIcons" src="img/recomNoSun.svg">
         </div>
 
+        <div id="center">
+            <a href="CuestionarioDiarioBoton"><button class="button">Contestar cuestionario</button></a>
+        </div>
     </body>
 </html>

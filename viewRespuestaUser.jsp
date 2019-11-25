@@ -16,26 +16,21 @@
 </style>
 </head>
 <body>
-	<form action="./AnswerAdmin" method="post">
+	<form action="./" method="post">
 		<table style="width:100%">
   		<caption>Cuestionarios</caption>
   		<tr>
-    		<th>Nombre</th>
-    		<th>Status</th>
-        <th>Contestar</th>
+    		<th>Pregunta</th>
+        <th>Respuesta</th>
   		</tr>
   		<c:forEach items="${requestScope.chatList}" var="us">
   			<tr>
   				<td>
-  					<c:out value= "${us.nameUser}" />
+  					<c:out value= "${us.mensajeUser}" />
   				</td>
-  				<td>
-  					<c:out value= "${us.asuntoUser}" />
+					<td>
+  					<c:out value= "${us.respuestaAdmin}" />
   				</td>
-          <td>
-            <input type="radio" name="preguntaID" value= "${us.idpreguntaUser}">
-          </td>
-  			</tr>
 			</c:forEach>
 		</table>
 		<input type="submit" name="boton" value="siguiente">

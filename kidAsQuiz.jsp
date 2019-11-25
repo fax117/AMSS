@@ -18,7 +18,7 @@
 
         <section id="start">
             <div class="centrardiv"> <!-- arreglar un poco más -->
-                <form>
+                <form method="post" action="./CuestionarioNinos">
                     <div id="order">
                         
                         <p class="lefty question">¿Realizaste actividades al aire libre?</p>

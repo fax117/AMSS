@@ -47,6 +47,7 @@ public class CuestionarioInicialServlet extends HttpServlet{
 				String otrosHumos = request.getParameter("otrosHumos");
 				String[] enfermedadesDiag = request.getParameterValues("enfermedadDiag");
 				List<String> enfermedadesDiagList = new LinkedList<>();
+				int edad = Integer.parseInt(request.getParameter("edad"));
 				for (int i = 0; i < enfermedadesDiag.length ; i++) {
 					enfermedadesDiagList.add(enfermedadesDiag[i]);
 				}
@@ -55,11 +56,11 @@ public class CuestionarioInicialServlet extends HttpServlet{
 				String ejercicio = request.getParameter("ejercicio");
 				String dondeEjercicio = request.getParameter("dondeEjercicio");
 
-				int res = stat.executeUpdate("INSERT INTO CuestionarioInicial (fecha, id_usuario, encuestaPorLlenar, nivelEstudios, fuma, cantidadCigarros, tiempoSinFumar, conviveConFumadores, dondeConvive, otroTipoDeHumo, otraEnfermedadDiag, tipoCancer, otraEnfermedadLibre, realizaEjercicio, dondeEjercicio) VALUES (\""
+				int res = stat.executeUpdate("INSERT INTO CuestionarioInicial (fecha, id_usuario, encuestaPorLlenar, nivelEstudios, fuma, cantidadCigarros, tiempoSinFumar, conviveConFumadores, dondeConvive, otroTipoDeHumo, otraEnfermedadDiag, tipoCancer, otraEnfermedadLibre, realizaEjercicio, dondeEjercicio, edad) VALUES (\""
 					+ fecha + "\" , \"" + usuarioId + "\", \"" + encuestaPorLlenar + "\" , \"" + nivelDeEstudios + "\", \"" + fuma + "\" , \"" + cantidadCigarros + "\" , \"" + tiempoSinFumar + "\" , \"" + conviveConFumadores + "\" , \"" + dondeFumadores + "\" , \"" + otrosHumos + "\" , \"" + enfermedadesDiagList + "\" , \"" + tipoCancer + "\" , \""
-					+ otraEnf + "\" , \"" + ejercicio + "\" , \"" + dondeEjercicio + "\");");
+					+ otraEnf + "\" , \"" + ejercicio + "\" , \"" + dondeEjercicio + "\" , \"" + edad + "\");");
 			}
-			response.sendRedirect("./landingUsers.jsp");
+			response.sendRedirect("./index.html");
 
 			stat.close();
 			con.close();

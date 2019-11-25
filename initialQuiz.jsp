@@ -55,7 +55,14 @@
                             <p class="lefty">Posgrado</p>
                             <br>
                             <br>
-                        </div>                        <!-- <input class="lefty inp"  type="text" required placeholder="Respuesta" class="inp" name="pregunta2" id="pregunta2"> -->
+                        </div>
+
+                        <div class="lefty question">
+                            <p class="lefty">Edad</p>
+                            <br>
+                            <input type="number" name="edad">
+                        </div>
+
                         <p class="lefty question">¿Fuma?</p>
                         <div class="lefty question">
                             <input class="lefty" type="radio" name="fuma" value="Si">
@@ -71,6 +78,7 @@
                             <p class="lefty">Cantidad al día</p>
                             <br>
                             <select class="lefty" name="cantidadCigarros">
+                                <option value="cero">0</option>
                                 <option value="uno">1</option>
                                 <option value="dos">2</option>
                                 <option value="tres">3</option>
@@ -80,6 +88,7 @@
                         <p class="lefty question">Si dejó de fumar, ¿hace cuánto?</p>
                         <div class="lefty question">
                             <select class="lefty" name="tiempoSinFumar">
+                                <option value="fumo">-</option>
                                 <option value="menosAno">-1 año</option>
                                 <option value="ano">1 año</option>
                                 <option value="masAno">+1 año</option>

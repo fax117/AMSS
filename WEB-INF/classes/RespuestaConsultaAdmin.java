@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/ViewPregunta")
-public class ViewChatAdmin extends HttpServlet{
+@WebServlet("/RespuestaConsultaAdmin")
+public class RespuestaConsultaAdmin extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -16,11 +16,8 @@ public class ViewChatAdmin extends HttpServlet{
 			e.printStackTrace();
 		}
 	}
-	public void doGet(HttpServletRequest request, HttpServletResponse response){
-		updateView(request, response);
-	}
 
-	public void updateView(HttpServletRequest request, HttpServletResponse response){
+	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
 
@@ -38,34 +35,32 @@ public class ViewChatAdmin extends HttpServlet{
 
 			//------Connection to mySQL setup ENDS----------
 
-      ResultSet res = stat.executeQuery("SELECT * FROM Chat;");
-      Vector<Chat> chatList = new Vector<Chat>();
+			//------User register STARTS------
 
-			while(res.next()) {
-          String cond = res.getString("contestada");
-          if ( cond.equals("0") ) {
-          String temp = res.getString("id_usuario");
-          String asunto = res.getString("asunto");
-					String pregunta = res.getString("pregunta");
-					String id_pregunta = res.getString("id_pregunta");
+			//retrieve values from register's forms
 
-          Chat aux = new Chat(temp, pregunta, asunto, id_pregunta);
-    			chatList.add(aux);
-        }
-      }
+			Cookie[] cookies = request.getCookies();
+
+			ResultSet res1 = stat.executeQuery("SELECT id_Investigador FROM Investigador WHERE `Correo` ='" + cookies[1].getValue() + "';");
+
+				if(res1.next() ) {
+					String usuarioId = res1.getString("id_Investigador");
+					String consulta = request.getParameter("consultaTx");
+					String id_pregunta = request.getParameter("id_pregunta");
+					System.out.println(id_pregunta);
+					int estado = 1;
+					//save values in database
+					int res = stat.executeUpdate("UPDATE Chat SET respuesta='"+ consulta +"' WHERE id_pregunta='"+ id_pregunta + "';");
+					int res2 = stat.executeUpdate("UPDATE Chat SET contestada='"+ estado +"' WHERE id_pregunta='"+ id_pregunta + "';");
+				}
+				response.sendRedirect("./LandingPageAdmin.jsp");
 
 			stat.close();
 			con.close();
 
 			//Cambiar
-      request.setAttribute("chatList", chatList);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/viewAdmin.jsp");
-			if(disp!=null){
-				disp.forward(request,response);
-			}
 
-			//:)
 		}
 		catch(Exception e){
 			e.printStackTrace();

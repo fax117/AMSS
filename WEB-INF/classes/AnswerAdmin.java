@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/ViewPregunta")
-public class ViewChatAdmin extends HttpServlet{
+@WebServlet("/AnswerAdmin")
+public class AnswerAdmin extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -16,11 +16,8 @@ public class ViewChatAdmin extends HttpServlet{
 			e.printStackTrace();
 		}
 	}
-	public void doGet(HttpServletRequest request, HttpServletResponse response){
-		updateView(request, response);
-	}
 
-	public void updateView(HttpServletRequest request, HttpServletResponse response){
+	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
 
@@ -38,34 +35,35 @@ public class ViewChatAdmin extends HttpServlet{
 
 			//------Connection to mySQL setup ENDS----------
 
-      ResultSet res = stat.executeQuery("SELECT * FROM Chat;");
-      Vector<Chat> chatList = new Vector<Chat>();
+			//------User register STARTS------
 
-			while(res.next()) {
-          String cond = res.getString("contestada");
-          if ( cond.equals("0") ) {
-          String temp = res.getString("id_usuario");
-          String asunto = res.getString("asunto");
-					String pregunta = res.getString("pregunta");
-					String id_pregunta = res.getString("id_pregunta");
 
-          Chat aux = new Chat(temp, pregunta, asunto, id_pregunta);
-    			chatList.add(aux);
-        }
-      }
+			String id_pregunta = request.getParameter("preguntaID");
+
+			ResultSet res = stat.executeQuery("SELECT pregunta FROM Chat WHERE id_pregunta='" + id_pregunta + "';");
+			Vector<Pregunta> preguntaList = new Vector<Pregunta>();
+
+			while(res.next() ) {
+				String pregunta = res.getString("pregunta");
+
+				Pregunta aux = new Pregunta(pregunta, id_pregunta);
+				preguntaList.add(aux);
+			}
+
+			request.setAttribute("preguntaList", preguntaList);
+
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/AdminRespuesta.jsp");
+			if(disp!=null){
+				disp.forward(request,response);
+			}
+
 
 			stat.close();
 			con.close();
 
 			//Cambiar
-      request.setAttribute("chatList", chatList);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/viewAdmin.jsp");
-			if(disp!=null){
-				disp.forward(request,response);
-			}
 
-			//:)
 		}
 		catch(Exception e){
 			e.printStackTrace();

@@ -18,7 +18,7 @@
 
         <section id="start">
             <div class="centrardiv"> <!-- arreglar un poco más -->
-                <form>
+                <form method="post" action="./CuestionarioSanos">
                     <div id="order">
 
                         <p class="lefty question">¿Realizaste actividad física al aire libre?</p>
@@ -33,12 +33,12 @@
                             
                         <p class="lefty question">¿En dónde?</p>
                         <div class="lefty question">
-                            <input class="lefty" type="textarea" name="ejercicioDonde">
+                            <input class="lefty" type="text" name="ejercicioDonde">
                         </div>
 
                         <p class="lefty question">¿Qué tipo de ejercicio realizaste?</p>
                         <div class="lefty question">
-                            <input class="lefty" type="textarea" name="ejercicioTipo">
+                            <input class="lefty" type="text" name="ejercicioTipo">
                         </div>
 
                         <p class="lefty question">¿Presentaste cansancio al caminar?</p>
@@ -55,7 +55,7 @@
                             <input class="lefty" type="radio" name="cansancioEmpinado" value="Si">
                             <p class="lefty">Sí</p>
                             <br><br>
-                            <input class="lefty" type="radio" name="cansancio" value="No">
+                            <input class="lefty" type="radio" name="cansancioEmpinado" value="No">
                             <p class="lefty">No</p>
                         </div>
 
