@@ -38,21 +38,25 @@ public class CuestionarioAsmaServlet extends HttpServlet{
 				if(res1.next() ) {
 					String usuarioId = res1.getString("id_usuario");
 					LocalDate fecha = java.time.LocalDate.now();
-					String actividadesAireLibre = request.getParameter("enfermedad");
-					String aireLibreMasDeTreintaMin = request.getParameter("studyLevel");
-					String horarioAlAireLibre = request.getParameter("fuma");
-					String sintomas = request.getParameter("cantidadCigarros");
-					String otro = request.getParameter("tiempoSinFumar");
-					String tiempoImpedido = request.getParameter("convivirFumadores");
-					String frecuenciaFaltaDeAire = request.getParameter("dondeFumadores");
-					String frecuenciaInhalador = request.getParameter("otrosHumos");
+					String actividadesAireLibre = request.getParameter("actividadAsma");
+					String aireLibreMasDeTreintaMin = request.getParameter("aireLibre");
+					String horarioAlAireLibre = request.getParameter("horaAire");
+					String[] sintomasA = request.getParameterValues("sintomas");
+					List<String> sintomas = new LinkedList<>();
+					for (int i = 0; i < sintomasA.length; i++) {
+						sintomas.add(sintomasA[i]);
+					}
+					String otro = request.getParameter("otroSint");
+					String tiempoImpedido = request.getParameter("impedimento");
+					String frecuenciaFaltaDeAire = request.getParameter("faltaAire");
+					String frecuenciaInhalador = request.getParameter("nebuInha");
 
 
 					int res = stat.executeUpdate("INSERT INTO CuestionarioAsma (fecha, id_usuario, actividadesAireLibre, aireLibreMasDeTreintaMin, horarioAlAireLibre, sintomas, otro, tiempoImpedido, FrecuenciaFaltaDeAire, FrecuenciaInhalador) VALUES (\""
 						+ fecha + "\" , \"" + usuarioId + "\", \"" + actividadesAireLibre + "\" , \"" + aireLibreMasDeTreintaMin + "\", \"" + horarioAlAireLibre + "\" , \"" + sintomas + "\" , \"" + otro + "\" , \"" + tiempoImpedido + "\" , \"" + frecuenciaFaltaDeAire + "\" , \"" + frecuenciaInhalador + "\");");
 				}
 			}
-			response.sendRedirect("/landingUser.jsp");
+			response.sendRedirect("./landingUsers.jsp");
 
 			stat.close();
 			con.close();

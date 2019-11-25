@@ -40,7 +40,11 @@ public class CuestionarioEpocServlet extends HttpServlet{
 					LocalDate fecha = java.time.LocalDate.now();
 					String actividadesAireLibreHoy = request.getParameter("actividadEpoc");
 					String aireLibreMasDeTreintaMinHoy = request.getParameter("aireLibreEpoc");
-					String horarioAlAireLibreHoy = request.getParameter("horaAireEpoc");
+					String[] horarioAlAireLibreHoy = request.getParameterValues("horaAireEpoc");
+					List<String> horarios = new LinkedList<>();
+					for (int i = 0; i < horarioAlAireLibreHoy.length; i++) {
+						horarios.add(horarioAlAireLibreHoy[i]);
+					}
 					String[] sintomas = request.getParameterValues("sintomasE");
 					List<String> sintomasList = new LinkedList<>();
 					for (int i = 0; i < sintomas.length ; i++) {
@@ -57,12 +61,12 @@ public class CuestionarioEpocServlet extends HttpServlet{
 					String energia = request.getParameter("energia");
 
 
-					int res = stat.executeUpdate("INSERT INTO CuestionarioAsma (fecha, id_usuario, actividadesAireLibreHoy, aireLibreMasDeTreintaMinHoy, horarioAlAireLibreHoy, sintomas, otra, tos, flemas, opresionEnPecho, faltaDeAireEscaleras, actividadesDomesticas, seguridadSalirDeCasa, duermoSinProblemas, energia) VALUES (\""
-						+ fecha + "\" , \"" + usuarioId + "\", \"" + actividadesAireLibreHoy + "\" , \"" + aireLibreMasDeTreintaMinHoy + "\", \"" + horarioAlAireLibreHoy + "\" , \"" + sintomasList + "\" , \"" + otro + "\" , \"" + tos + "\" , \"" + flemas + "\" , \"" + opresionEnPecho + "\" , \"" + faltaDeAireEscaleras + "\" , \"" + actividadesDomesticas + "\" , \""
-						+ faltaDeAireEscaleras + "\" , \"" + actividadesDomesticas + "\" , \"" + seguridadSalirDeCasa + "\" , \"" + duermoSinProblemas + "\" , \"" + energia + "\");");
+					int res = stat.executeUpdate("INSERT INTO CuestionarioEpoc (fecha, id_usuario, actividadesAireLibreHoy, aireLibreMasDeTreintaMinHoy, horarioAlAireLibreHoy, sintomas, otra, tos, flemas, opresionEnPecho, faltaDeAireEscaleras, actividadesDomesticas, seguridadSalirDeCasa, duermoSinProblemas, energia) VALUES (\""
+						+ fecha + "\" , \"" + usuarioId + "\", \"" + actividadesAireLibreHoy + "\" , \"" + aireLibreMasDeTreintaMinHoy + "\", \"" + horarios + "\" , \"" + sintomasList + "\" , \"" + otro + "\" , \"" + tos + "\" , \"" + flemas + "\" , \"" + opresionEnPecho + "\" , \"" + faltaDeAireEscaleras + "\" , \"" + actividadesDomesticas + "\" , \""
+						+ seguridadSalirDeCasa + "\" , \"" + duermoSinProblemas + "\" , \"" + energia + "\");");
 				}
 			}
-			response.sendRedirect("/landingUser.jsp");
+			response.sendRedirect("./landingUsers.jsp");
 
 			stat.close();
 			con.close();

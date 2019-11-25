@@ -60,7 +60,7 @@ public class CuestionarioInicialServlet extends HttpServlet{
 					+ fecha + "\" , \"" + usuarioId + "\", \"" + encuestaPorLlenar + "\" , \"" + nivelDeEstudios + "\", \"" + fuma + "\" , \"" + cantidadCigarros + "\" , \"" + tiempoSinFumar + "\" , \"" + conviveConFumadores + "\" , \"" + dondeFumadores + "\" , \"" + otrosHumos + "\" , \"" + enfermedadesDiagList + "\" , \"" + tipoCancer + "\" , \""
 					+ otraEnf + "\" , \"" + ejercicio + "\" , \"" + dondeEjercicio + "\" , \"" + edad + "\");");
 			}
-			response.sendRedirect("/index.html");
+			response.sendRedirect("./index.html");
 
 			stat.close();
 			con.close();

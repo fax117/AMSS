@@ -38,21 +38,31 @@ public class CuestionarioSanosServlet extends HttpServlet{
 				if(res1.next() ) {
 					String usuarioId = res1.getString("id_usuario");
 					LocalDate fecha = java.time.LocalDate.now();
-					String actividadesAireLibre = request.getParameter("enfermedad");
-					String aireLibreMasDeTreintaMin = request.getParameter("studyLevel");
-					String horarioAlAireLibre = request.getParameter("fuma");
-					String sintomas = request.getParameter("cantidadCigarros");
-					String otro = request.getParameter("tiempoSinFumar");
-					String tiempoImpedido = request.getParameter("convivirFumadores");
-					String frecuenciaFaltaDeAire = request.getParameter("dondeFumadores");
-					String frecuenciaInhalador = request.getParameter("otrosHumos");
+					String actividadesAireLibre = request.getParameter("ejercicioSanos");
+					String donde = request.getParameter("ejercicioDonde");
+					String tipoEjercicio = request.getParameter("ejercicioTipo");
+					String cansancio = request.getParameter("cansancio");
+					String cansancioEscaleras = request.getParameter("cansancioEmpinado");
+					String aireLibreTreintaMins = request.getParameter("aireLibre");
+					String[] horarioAireLibre = request.getParameterValues("horaAire");
+					List<String> horarios = new LinkedList<>();
+					for (int i = 0; i < horarioAireLibre.length; i++) {
+						horarios.add(horarioAireLibre[i]);
+					}
+					String[] sintomas = request.getParameterValues("sintomas");
+					List<String> sintomasL = new LinkedList<>();
+					for (int i = 0; i < sintomas.length; i++) {
+						sintomasL.add(sintomas[i]);
+					}
+					String otros = request.getParameter("otroSint");
 
 
-					int res = stat.executeUpdate("INSERT INTO CuestionarioAsma (fecha, id_usuario, actividadesAireLibre, aireLibreMasDeTreintaMin, horarioAlAireLibre, sintomas, otro, tiempoImpedido, FrecuenciaFaltaDeAire, FrecuenciaInhalador) VALUES (\""
-						+ fecha + "\" , \"" + usuarioId + "\", \"" + actividadesAireLibre + "\" , \"" + aireLibreMasDeTreintaMin + "\", \"" + horarioAlAireLibre + "\" , \"" + sintomas + "\" , \"" + otro + "\" , \"" + tiempoImpedido + "\" , \"" + frecuenciaFaltaDeAire + "\" , \"" + frecuenciaInhalador + "\");");
+					int res = stat.executeUpdate("INSERT INTO CuestionarioSanos (fecha, id_usuario, actividadesAireLibre, donde, tipoEjercicio, cansancio, cansancioEscaleras, aireLibreTreintaMins, horarioAireLibre, sintomas, otros) VALUES (\""
+						+ fecha + "\" , \"" + usuarioId + "\", \"" + actividadesAireLibre + "\" , \"" + donde + "\", \"" + cansancio + "\" , \"" + cansancioEscaleras + "\" , \"" + aireLibreTreintaMins + "\" , \"" + horarioAireLibre + "\" , \""
+						+ horarios + "\" , \"" + sintomasL + "\" , \"" + otros + "\");");
 				}
 			}
-			response.sendRedirect("/landingUser.jsp");
+			response.sendRedirect("./landingUsers.jsp");
 
 			stat.close();
 			con.close();
