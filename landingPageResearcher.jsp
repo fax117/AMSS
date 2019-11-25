@@ -32,7 +32,7 @@
         </header>
 
         <div id="thingsToDo">
-            <button id="button">Revisar base de datos</button> <!--Solo para el update-->>
+            <button id="button">Revisar base de datos</button> <!--Solo para el update-->
         </div>
 
     </body>
