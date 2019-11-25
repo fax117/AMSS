@@ -25,7 +25,7 @@
               <a href="#"><li>Cuenta</li></a>
               <a href="GenerarReporteServlet"><li>Obtener Reportes</li></a>
               <a href="ViewPregunta"><li>Responder</li></a>
-              <a href="index.html"><li>Cerrar Sesión</li></a>
+              <a href="Logout"><li>Cerrar Sesión</li></a>
             </ul>
           </div>
         </nav>

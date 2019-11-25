@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-	
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -27,7 +27,7 @@
               <a href="#"><li>Cuenta</li></a>
               <a href="#"><li>Programar Recordatorio</li></a>
               <a href="TransitionServlet"><li>Consulta un médico</li></a>
-              <a href="index.html"><li>Cerrar Sesión</li></a>
+              <a href="Logout"><li>Cerrar Sesión</li></a>
             </ul>
           </div>
         </nav>
