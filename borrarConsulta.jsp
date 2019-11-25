@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
@@ -16,13 +16,12 @@
 </style>
 </head>
 <body>
-	<form action="./AnswerAdmin" method="post">
 		<table style="width:100%">
-  		<caption>Cuestionarios</caption>
+  		<caption>Borrar</caption>
   		<tr>
     		<th>Nombre</th>
     		<th>Status</th>
-        <th>Contestar</th>
+        <th>Eliminar</th>
   		</tr>
   		<c:forEach items="${requestScope.chatList}" var="us">
   			<tr>
@@ -32,13 +31,11 @@
   				<td>
   					<c:out value= "${us.asuntoUser}" />
   				</td>
-          <td>
-            <input type="radio" name="preguntaID" value="${us.idpreguntaUser}">
-          </td>
   			</tr>
 			</c:forEach>
+        <td>
+          <input type="submit" value="Borrar" id="button">
+        </td>
 		</table>
-		<input type="submit" name="boton" value="siguiente">
-	</form>
 </body>
 </html>
