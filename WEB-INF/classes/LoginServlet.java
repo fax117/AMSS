@@ -100,8 +100,16 @@ public class LoginServlet extends HttpServlet{
 				userName.setPath("/IRPS");
 				response.addCookie(userName);
 
+				UserLandingRedirect redirect = new UserLandingRedirect();
 				
-
+				String irpsVal = "404";
+				try{
+					irpsVal = redirect.loadLanding();
+					request.setAttribute("irpsServerValue",irpsVal);
+				}
+				catch(Exception e){
+					//
+				}
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
 				if(disp!=null){
 					disp.forward(request,response);
