@@ -97,7 +97,7 @@ public class LoginServlet extends HttpServlet{
 				session.setMaxInactiveInterval(30*60);
 				Cookie userName = new Cookie("user", username );
 				userName.setMaxAge(30*60);
-				userName.setPath("/");
+				userName.setPath("/IRPS");
 				response.addCookie(userName);
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
 				if(disp!=null){
@@ -111,7 +111,7 @@ public class LoginServlet extends HttpServlet{
 				session.setMaxInactiveInterval(30*60);
 				Cookie userName = new Cookie("user", username );
 				userName.setMaxAge(30*60);
-				userName.setPath("/");
+				userName.setPath("/IRPS");
 				response.addCookie(userName);
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/LandingPageAdmin.jsp");
 				if(disp!=null){
@@ -125,7 +125,7 @@ public class LoginServlet extends HttpServlet{
 				session.setMaxInactiveInterval(30*60);
 				Cookie userName = new Cookie("user", username);
 				userName.setMaxAge(30*60);
-				userName.setPath("/");
+				userName.setPath("/IRPS");
 				response.addCookie(userName);
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingPageResearcher.jsp");
 				if(disp!=null){
