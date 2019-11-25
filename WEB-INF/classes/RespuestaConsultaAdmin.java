@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/RegisterRe")
-public class RegisterRe extends HttpServlet{
+@WebServlet("/RespuestaConsultaAdmin")
+public class RespuestaConsultaAdmin extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -38,20 +38,28 @@ public class RegisterRe extends HttpServlet{
 			//------User register STARTS------
 
 			//retrieve values from register's forms
-			String name = request.getParameter("ReName");
-			String email = request.getParameter("ReEmail");
-			String password = request.getParameter("RePW");
-			String type = request.getParameter("ReType");
 
-			//save values in database
-			int res = stat.executeUpdate("insert into Investigador(Clearance,Nombre, Correo, Contrasena) VALUES (\""
-				+ type + "\",\""+ name + "\", \"" + email + "\", \"" + password + "\");");
+			Cookie[] cookies = request.getCookies();
+
+			ResultSet res1 = stat.executeQuery("SELECT id_Investigador FROM Investigador WHERE `Correo` ='" + cookies[1].getValue() + "';");
+
+				if(res1.next() ) {
+					String usuarioId = res1.getString("id_Investigador");
+					String consulta = request.getParameter("consultaTx");
+					String id_pregunta = request.getParameter("id_pregunta");
+					System.out.println(id_pregunta);
+					int estado = 1;
+					//save values in database
+					int res = stat.executeUpdate("UPDATE Chat SET respuesta='"+ consulta +"' WHERE id_pregunta='"+ id_pregunta + "';");
+					int res2 = stat.executeUpdate("UPDATE Chat SET contestada='"+ estado +"' WHERE id_pregunta='"+ id_pregunta + "';");
+				}
+				response.sendRedirect("./LandingPageAdmin.jsp");
 
 			stat.close();
 			con.close();
 
+			//Cambiar
 
-			response.sendRedirect("./LandingPageAdmin.jsp");
 
 		}
 		catch(Exception e){

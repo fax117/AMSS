@@ -10,7 +10,7 @@
         <title>Página Principal</title>
         <link href="css/resetCss.css" rel ="stylesheet">
         <link href="css/home.css" rel ="stylesheet">
-        
+
     </head>
     <body>
         <header>
@@ -25,11 +25,12 @@
               <a href="#"><li>Home</li></a>
               <a href="#"><li>About</li></a>
               <a href="#"><li>Info</li></a>
-              <a href="#"><li>Contact</li></a>
+              <a href="TransitionServlet"><li>Consulta</li></a>
+              <a href="TransitionRespuesta"><li>Ver Respuestas</li></a>
             </ul>
           </div>
         </nav>
-            <img class="header-icons" id="profile-icon" src="img/profile-icon.svg">
+            <a href="profile.jsp"><img class="header-icons" id="profile-icon" src="img/profile-icon.svg"></a>
         </header>
 
         <div class="irpsDisplay">
@@ -54,6 +55,9 @@
             <img class="recomIcons" src="img/recomAsthma.svg">
             <img class="recomIcons" src="img/recomNoSun.svg">
         </div>
-        
+
+        <div id="center">
+            <a href="CuestionarioDiarioBoton"><button class="button">Contestar cuestionario</button></a>
+        </div>
     </body>
 </html>

@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/RegisterRe")
-public class RegisterRe extends HttpServlet{
+@WebServlet("/AnswerAdmin")
+public class AnswerAdmin extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -37,21 +37,32 @@ public class RegisterRe extends HttpServlet{
 
 			//------User register STARTS------
 
-			//retrieve values from register's forms
-			String name = request.getParameter("ReName");
-			String email = request.getParameter("ReEmail");
-			String password = request.getParameter("RePW");
-			String type = request.getParameter("ReType");
 
-			//save values in database
-			int res = stat.executeUpdate("insert into Investigador(Clearance,Nombre, Correo, Contrasena) VALUES (\""
-				+ type + "\",\""+ name + "\", \"" + email + "\", \"" + password + "\");");
+			String id_pregunta = request.getParameter("preguntaID");
+
+			ResultSet res = stat.executeQuery("SELECT pregunta FROM Chat WHERE id_pregunta='" + id_pregunta + "';");
+			Vector<Pregunta> preguntaList = new Vector<Pregunta>();
+
+			while(res.next() ) {
+				String pregunta = res.getString("pregunta");
+
+				Pregunta aux = new Pregunta(pregunta, id_pregunta);
+				preguntaList.add(aux);
+			}
+
+			request.setAttribute("preguntaList", preguntaList);
+
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/AdminRespuesta.jsp");
+			if(disp!=null){
+				disp.forward(request,response);
+			}
+
 
 			stat.close();
 			con.close();
 
+			//Cambiar
 
-			response.sendRedirect("./LandingPageAdmin.jsp");
 
 		}
 		catch(Exception e){

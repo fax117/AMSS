@@ -19,40 +19,40 @@
 	</session-timeout>
 </session-config>
 
-<context-param> 
+<context-param>
 	<description>
 		DB login username
-	</description> 
+	</description>
 	<param-name>
 		usuario
-	</param-name> 
+	</param-name>
 	<param-value>
 		finley
-	</param-value> 
+	</param-value>
 </context-param>
 
-<context-param> 
+<context-param>
 	<description>
 		DB login password
-	</description> 
+	</description>
 	<param-name>
 		pass
-	</param-name> 
+	</param-name>
 	<param-value>
 		password
-	</param-value> 
+	</param-value>
 </context-param>
 
-<context-param> 
+<context-param>
 	<description>
 		Database of login credentials' NAME
-	</description> 
+	</description>
 	<param-name>
 		base
-	</param-name> 
+	</param-name>
 	<param-value>
 		irps_tec_db
-	</param-value> 
+	</param-value>
 </context-param>
 
 </web-app>
