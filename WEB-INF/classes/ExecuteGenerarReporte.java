@@ -44,7 +44,7 @@ public class ExecuteGenerarReporte extends HttpServlet{
 			String endDate = request.getParameter("endDate");
 			//String enclosed = "$";
 			//String linesTerminated = "\n";
-			String path ="../webapps/IRPS/csv/Natalia.csv";
+			String path ="../webapps/IRPS/csv/" + initialDate + ".csv";
             ResultSet rec = stat.executeQuery("SELECT * FROM cuestionarioasma WHERE fecha BETWEEN \" "+ initialDate + " \" and \" "+ endDate +" \" ");/* INTO OUTFILE  \" "+ path +" \" FIELDS ENCLOSED BY \" "+enclosed+" \"  LINES TERMINATED BY \" "+linesTerminated+" \" ;");*/
 			
 		
