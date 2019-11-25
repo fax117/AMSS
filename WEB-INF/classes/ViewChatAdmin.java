@@ -65,7 +65,7 @@ public class ViewChatAdmin extends HttpServlet{
 				disp.forward(request,response);
 			}
 
-
+			//:)
 		}
 		catch(Exception e){
 			e.printStackTrace();
