@@ -24,7 +24,7 @@
               <a href="#"><li>Home</li></a>
               <a href="#"><li>About</li></a>
               <a href="#"><li>Info</li></a>
-              <a href="#"><li>Contact</li></a>
+              <a href="ViewPregunta"><li>Responder Consulta</li></a>
             </ul>
           </div>
         </nav>
@@ -34,6 +34,6 @@
         <div id="thingsToDo">
             <button id="button">Revisar base de datos</button> <!--Solo para el update-->>
         </div>
-        
+
     </body>
 </html>

@@ -11,6 +11,7 @@
        <link href="css/login.css" rel ="stylesheet">
 </head>
 <body>
+	<form method="post" action="./RespuestaConsultaAdmin">
   <table style="width:100%">
     <caption>Cuestionarios</caption>
     <tr>
@@ -20,14 +21,12 @@
       <tr>
         <td>
           <c:out value= "${us.pregunta}" />
+					<input type="hidden" name="id_pregunta" value="${us.id_pregunta}">
         </td>
       </tr>
     </c:forEach>
   </table>
-	<h3>Consulta personalizada</h3>
-	<p>Por favor escribe aquí tus sintomas</p>
-	<form method="post" action="./RespuestaConsultaAdmin">
-    <input type="hidden" name="id_pregunta" value="${us.id_pregunta}">
+	<p>Contestar Consulta</p>
 		<textarea maxlength="1000" rows="10" cols="50" name="consultaTx"></textarea>
 		<br>
 		<input type="submit" value="Enviar" id="button">

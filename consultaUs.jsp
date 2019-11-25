@@ -18,7 +18,7 @@
 		<br>
 		 <p>
              <label>Asunto</label>
-             <select id = "miLista">
+             <select id = "miLista" name="asuntoParam">
                <option value = "Irritacion">Irritación</option>
                <option value = "Resquedda nasal">Resequedad nasal</option>
                <option value = "Dolor">Dolor de cabeza</option>

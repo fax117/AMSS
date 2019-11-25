@@ -24,7 +24,7 @@
               <a href="#"><li>Home</li></a>
               <a href="#"><li>About</li></a>
               <a href="#"><li>Info</li></a>
-              <a href="ViewPregunta"><li>Responder</li></a>
+              <a href="ViewPregunta"><li>Responder Consulta</li></a>
             </ul>
           </div>
         </nav>

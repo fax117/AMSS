@@ -43,7 +43,7 @@ public class ViewChatAdmin extends HttpServlet{
 
 			while(res.next()) {
           String cond = res.getString("contestada");
-          if ( cond != "1") {
+          if ( cond.equals("0") ) {
           String temp = res.getString("id_usuario");
           String asunto = res.getString("asunto");
 					String pregunta = res.getString("pregunta");

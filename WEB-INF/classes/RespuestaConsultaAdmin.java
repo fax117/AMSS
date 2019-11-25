@@ -41,15 +41,17 @@ public class RespuestaConsultaAdmin extends HttpServlet{
 
 			Cookie[] cookies = request.getCookies();
 
-			ResultSet res1 = stat.executeQuery("SELECT id_usuario FROM Usuario WHERE `Correo electronico` ='" + cookies[1].getValue() + "';");
+			ResultSet res1 = stat.executeQuery("SELECT id_Investigador FROM Investigador WHERE `Correo` ='" + cookies[1].getValue() + "';");
 
 				if(res1.next() ) {
-					String usuarioId = res1.getString("id_usuario");
+					String usuarioId = res1.getString("id_Investigador");
 					String consulta = request.getParameter("consultaTx");
 					String id_pregunta = request.getParameter("id_pregunta");
+					System.out.println(id_pregunta);
 					int estado = 1;
 					//save values in database
-					int res = stat.executeUpdate("UPDATE Chat SET respuesta='"+ consulta +"', contestada='"+ estado +"' WHERE id_pregunta='"+ id_pregunta + "';");
+					int res = stat.executeUpdate("UPDATE Chat SET respuesta='"+ consulta +"' WHERE id_pregunta='"+ id_pregunta + "';");
+					int res2 = stat.executeUpdate("UPDATE Chat SET contestada='"+ estado +"' WHERE id_pregunta='"+ id_pregunta + "';");
 				}
 				response.sendRedirect("./LandingPageAdmin.jsp");
 
