@@ -42,7 +42,7 @@ public class BorrarServlet extends HttpServlet{
       Vector<Researcher> rList = new Vector<Researcher>();
 
 			while(res.next() ) {
-          Long id_Investigador = Long.parseLong( res.getString("id_investigador") );
+          Long id_Investigador = Long.parseLong( res.getString("id_Investigador") );
           String corre = res.getString("Correo");
           String nombre = res.getString("Nombre");
 

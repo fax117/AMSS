@@ -40,7 +40,8 @@ public class BorrarInvesti extends HttpServlet{
 
 			String id = request.getParameter("borrarID");
 
-      int res = stat.executeUpdate("DELETE FROM Investigador WHERE 'id_investigador='"+ id +"'");
+
+      int res = stat.executeUpdate("DELETE FROM Investigador WHERE id_Investigador='"+ id +"';");
 
 			RequestDispatcher disp = getServletContext().getRequestDispatcher("/LandingPageAdmin.jsp");
 			if(disp!=null){
