@@ -26,6 +26,7 @@
               <a href="#"><li>About</li></a>
               <a href="#"><li>Info</li></a>
               <a href="TransitionServlet"><li>Consulta</li></a>
+              <a href="TransitionRespuesta"><li>Ver Respuestas</li></a>
             </ul>
           </div>
         </nav>
