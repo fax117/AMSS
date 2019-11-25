@@ -99,6 +99,9 @@ public class LoginServlet extends HttpServlet{
 				userName.setMaxAge(30*60);
 				userName.setPath("/IRPS");
 				response.addCookie(userName);
+
+				
+
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
 				if(disp!=null){
 					disp.forward(request,response);
