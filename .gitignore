@@ -33,3 +33,7 @@ Thumbs.db
 
 # Visual Studio #
 *.vs
+
+# Visual Studio Code #
+
+*.vscode

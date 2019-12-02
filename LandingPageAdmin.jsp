@@ -25,7 +25,7 @@
               <a href="#"><li>Cuenta</li></a>
               <a href="GenerarReporteServlet"><li>Obtener Reportes</li></a>
               <a href="ViewPregunta"><li>Responder</li></a>
-              <a href="index.html"><li>Cerrar Sesión</li></a>          
+              <a href="Logout"><li>Cerrar Sesión</li></a>
             </ul>
           </div>
         </nav>
@@ -35,6 +35,7 @@
         <div id="thingsToDo">
             <a href="GenerarReporteServlet"><button id="button">Obtener Reportes</button></a>
             <a href="./registerRe.jsp"><button id="button">Registrar investigador</button></a>
+            <a href="BorrarVerServlet"><button id="button">Borrar investigador</button></a>
             <button id="button">Editar investigador</button>
             <button id="button">Agregar recomendaciones</button>
         </div>

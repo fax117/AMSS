@@ -29,7 +29,7 @@
                <option value = "Irritación, comezón en la piel">Irritación, comezón en la piel</option>
              </select>
           </p>
-		<input type="submit" value="Enviar" id="button">
+		<input type="submit" value="Enviar" id="button" onclick="return confirm('Quieres Enviar esta pregunta?')" >
 	</form>
 </body>
 </html>

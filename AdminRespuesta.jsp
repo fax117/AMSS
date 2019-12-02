@@ -29,7 +29,7 @@
 	<p>Contestar Consulta</p>
 		<textarea maxlength="1000" rows="10" cols="50" name="consultaTx"></textarea>
 		<br>
-		<input type="submit" value="Enviar" id="button">
+		<input type="submit" value="Enviar" id="button" onclick="return confirm('Quieres Enviar esta respuesta?')" >
 	</form>
 </body>
 </html>
