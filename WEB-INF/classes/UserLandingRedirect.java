@@ -8,38 +8,13 @@ import java.util.regex.Pattern;
 
 public class UserLandingRedirect{
 
-	String irpsVal = "-1";
+	String irpsVal = "?";
 	
 	public UserLandingRedirect(){
 
 	}
 
 	public String loadLanding(){
-		/*try{
-            Document document = Jsoup.connect("http://www.aire.cdmx.gob.mx/conoce-tu-numero-iner/").get();
-            Element content = document.getElementById("graficaIRPS");
-            String divContents = content.outerHtml();
-
-            System.out.println("Div contents are: " + divContents);
-
-            Pattern pattern = Pattern.compile("(?<=var valorIRPS = ').*");
-            Matcher matcher = pattern.matcher(divContents);
-
-            /*System.out.println("Yay match found: " + matcher.group().toString());
-            
-            boolean found = false;
-            while (matcher.find()){
-                System.out.println("I found the text: " + matcher.group().toString() + " with length " + matcher.group().toString().length());
-                found = true;
-            }
-            if (!found){
-                System.out.println("I didn't find the text");
-            }
-        }
-            catch(Exception e){
-            //Rip
-            System.out.println("We crashin bois: " + e);
-        }*/
         try{
             Document document = Jsoup.connect("http://www.aire.cdmx.gob.mx/conoce-tu-numero-iner/").get();
             Element content = document.getElementById("graficaIRPS");

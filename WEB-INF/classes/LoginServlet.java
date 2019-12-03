@@ -101,7 +101,6 @@ public class LoginServlet extends HttpServlet{
 				response.addCookie(userName);
 
 				UserLandingRedirect redirect = new UserLandingRedirect();
-				
 				String irpsVal = "404";
 				try{
 					irpsVal = redirect.loadLanding();
