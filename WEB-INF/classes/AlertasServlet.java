@@ -33,17 +33,16 @@ public class AlertasServlet extends HttpServlet{
 
 			Cookie[] cookies = request.getCookies();
 			ResultSet res1 = stat.executeQuery("SELECT id_usuario FROM Usuario WHERE `Correo electronico` ='" + cookies[1].getValue() + "';");
-			String usuarioId = res1.getString("id_usuario");
-
-			String chosenIrps = request.getParameter("alert");
 
 			//System.out.println(chosenIrps);
 			if(res1.next() ) {
+				String usuarioId = res1.getString("id_usuario");
+				String chosenIrps = request.getParameter("alert");
 				int res = stat.executeUpdate("UPDATE usuario SET NumeroRecordatorio = \"" + 
 				chosenIrps + "\" WHERE id_usuario = \"" + usuarioId + "\";");
 			}
 			
-			response.sendRedirect("./landingUser.jsp");
+			response.sendRedirect("./landingUsers.jsp");
 			stat.close();
 			con.close();
 
