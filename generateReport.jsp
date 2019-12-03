@@ -12,16 +12,25 @@
         <link href="css/generarReportes.css" rel ="stylesheet">
     </head>
     <body>
+            
         <header>
-                <h1>Reporte de pacientes</h1>
+            <h1>Reporte de pacientes</h1>
         </header>
+       
         <section id="start">
             <div class="centrardiv">
                 <h2>Generar reportes de:</h2>
-                <form method="get" target="_blank" action="./ExecuteGenerarReporte">
+                <form method="get"  action="./ExecuteGenerarReporte">
                     <input type="date" name="initialDate" id="date">
                     <h2>a:</h2>
                     <input type="date" name="endDate" id="date">
+                    <h2> Información de:</h2>
+                    <select id ="date" name="enfermedad">
+                        <option value="asma">Asma</option>
+                        <option value="asmaNinos">Asma Niños</option>
+                        <option value="epoc">EPOC</option>
+                        <option value="sanos">Sanos</option>
+                    </select>
                     <input type="submit" id ="button" value="GenerarReporte">
                 </form>
             </div>  

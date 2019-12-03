@@ -59,25 +59,25 @@
                         <div class="lefty question">
                             <p class="lefty question">¿Cuál(es) de estos síntomas presentaste?</p>
                             <br>
-                            <input class="lefty" type="checkbox" name="sintomasAK" value="ojosIrrit">
+                            <input class="lefty" type="checkbox" name="sintomasAK" value="ojosIrritados">
                             <p class="lefty">Irritación de ojos</p>
                             <br><br><br><br>
-                            <input class="lefty" type="checkbox" name="sintomasAK" value="dolorGar">
+                            <input class="lefty" type="checkbox" name="sintomasAK" value="dolorGarganta">
                             <p class="lefty">Irritación de garganta</p>
                             <br><br><br><br>
-                            <input class="lefty" type="checkbox" name="sintomasAK" value="reseqNa">
+                            <input class="lefty" type="checkbox" name="sintomasAK" value="resequedadNasal">
                             <p class="lefty">Resequedad nasal</p>
                             <br><br><br><br>
-                            <input class="lefty" type="checkbox" name="sintomasAK" value="dolorCabe">
+                            <input class="lefty" type="checkbox" name="sintomasAK" value="dolorCabeza">
                             <p class="lefty">Dolor de cabeza</p>
                             <br><br><br>
                             <input class="lefty" type="checkbox" name="sintomasAK" value="tos">
                             <p class="lefty">Tos</p>
                             <br><br><br>
-                            <input class="lefty" type="checkbox" name="sintomasAK" value="respirarDif">
+                            <input class="lefty" type="checkbox" name="sintomasAK" value="DificultadParaRespirar">
                             <p class="lefty">Dificultad para respirar</p>
                             <br><br><br>
-                            <input class="lefty" type="checkbox" name="sintomasAK" value="flujoN">
+                            <input class="lefty" type="checkbox" name="sintomasAK" value="flujoNasal">
                             <p class="lefty">Flujo nasal</p>
                             <br><br><br>
                             <input class="lefty" type="checkbox" name="sintomasAK" value="dolorPecho">
@@ -86,7 +86,7 @@
                             <input class="lefty" type="checkbox" name="sintomasAK" value="jadeo">
                             <p class="lefty">Jadeo</p>
                             <br><br><br>
-                            <input class="lefty" type="checkbox" name="sintomasAK" value="pielIrrit">
+                            <input class="lefty" type="checkbox" name="sintomasAK" value="pielIrritada">
                             <p class="lefty">Irritación en la piel o comezón</p>
                         </div>
 
