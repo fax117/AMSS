@@ -53,10 +53,10 @@ public class ViewChatAdmin extends HttpServlet{
 						String pregunta = res.getString("pregunta");
 						String id_pregunta = res.getString("id_pregunta");
 
-						ResultSet res2 = stat2.executeQuery("SELECT `Correo electronico` FROM Usuario WHERE id_usuario=" + temp + ";");
+						ResultSet res2 = stat2.executeQuery("SELECT `Nombre` FROM Usuario WHERE id_usuario=" + temp + ";");
 
 						if (res2.next()) {
-							String name = res2.getString("Correo electronico");
+							String name = res2.getString("Nombre");
 							Chat aux = new Chat(name, pregunta, asunto, id_pregunta);
 	    				chatList.add(aux);
 						}
