@@ -20,7 +20,7 @@
 			<span></span>
 
 			<ul id="menu">
-				<a href="#"><li>Inicio</li></a>
+				<a href="./LandingPageAdmin.jsp"><li>Inicio</li></a>
 				<a href="GenerarReporteServlet"><li>Obetener Reportes</li></a>
 				<a href="RegisterRe"><li>Registrar Investigadores</li></a>
 				<a href="BorrarVerServlet"><li>Borrar Investigadores</li></a>

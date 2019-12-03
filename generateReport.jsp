@@ -14,6 +14,7 @@
     <body>
             
         <header>
+            <a href="./LandingPageAdmin.jsp"><img src="img/left_Arrow.png" id="backArrow"></a>
             <h1>Reporte de pacientes</h1>
         </header>
        

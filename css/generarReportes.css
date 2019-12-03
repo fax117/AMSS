@@ -239,5 +239,11 @@ a
   transform: none;
 }
 
-
+#backArrow{
+  height: 25%;
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
