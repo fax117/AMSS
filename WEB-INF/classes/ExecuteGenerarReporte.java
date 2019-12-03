@@ -107,11 +107,11 @@ public class ExecuteGenerarReporte extends HttpServlet{
 					
 					writer.write(",");
 
-					writer.write(recAsma.getString("Frecuencia de Falta de Aire"));
+					writer.write(recAsma.getString("FrecuenciaFaltaDeAire"));
 
 					writer.write(",");
 
-					writer.write(recAsma.getString("Frecuencia de uso de Inhalador"));
+					writer.write(recAsma.getString("FrecuenciaInhalador"));
 
 					writer.write("\r\n");
 			
