@@ -179,7 +179,7 @@ public class LoginServlet extends HttpServlet{
 				}
 			}
 			else{
-				response.sendRedirect("./index.html");
+				response.sendRedirect("./error.jsp");
 			}
 
 			stat.close();
