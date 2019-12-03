@@ -38,7 +38,8 @@ public class AlertasServlet extends HttpServlet{
 			String chosenIrps = request.getParameter("alert");
 
 			//System.out.println(chosenIrps);
-
+			
+			Statement stat = con.createStatement();
 			int res = stat.executeUpdate("UPDATE usuario SET NumeroRecordatorio = \"" + 
 			chosenIrps + "\" WHERE id_usuario = \"" + usuarioId + "\";");
 
