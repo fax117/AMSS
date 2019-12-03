@@ -66,7 +66,7 @@ public class ExecuteGenerarReporte extends HttpServlet{
 
 					writer.write("PACIENTES CON ASMA");
 					writer.write("\r\n");
-					writer.write("num. Cuestionario, Fecha, Usuario, Actividades al aire libre, Mas de treinta minutos al aire libre, Horario al aire Libre ");
+					writer.write("num. Cuestionario, Fecha, Usuario, Actividades al aire libre, Mas de treinta minutos al aire libre, Horario al aire Libre, Sintomas, Otro, Tiempo Impedido, Frecuencia de Falta de Aire, Frecuencia del uso del Inhalador ");
 					writer.write("\r\n");
 					while((recAsma!=null) && (recAsma.next()))
 					{
