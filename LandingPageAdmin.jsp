@@ -22,7 +22,6 @@
 
             <ul id="menu">
               <a href="#"><li>Inicio</li></a>
-              <a href="#"><li>Alerta</li></a>
               <a href="GenerarReporteServlet"><li>Obtener Reportes</li></a>
               <a href="ViewPregunta"><li>Responder</li></a>
               <a href="Logout"><li>Cerrar Sesión</li></a>
