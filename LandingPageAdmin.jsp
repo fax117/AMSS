@@ -22,8 +22,11 @@
 
             <ul id="menu">
               <a href="#"><li>Inicio</li></a>
-              <a href="GenerarReporteServlet"><li>Obtener Reportes</li></a>
-              <a href="ViewPregunta"><li>Responder</li></a>
+              <a href="GenerarReporteServlet"><li>Obetener Reportes</li></a>
+              <a href="RegisterRe"><li>Registrar Investigadores</li></a>
+              <a href="BorrarVerServlet"><li>Borrar Investigadores</li></a>
+              <a href="#"><li>Editar Investigadores</li></a>
+              <a href="#"><li>Agregar Recomendaciones</li></a>
               <a href="Logout"><li>Cerrar Sesión</li></a>
             </ul>
           </div>
