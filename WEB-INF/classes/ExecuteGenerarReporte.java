@@ -93,6 +93,26 @@ public class ExecuteGenerarReporte extends HttpServlet{
 					
 					writer.write(recAsma.getString("horarioAlAireLibre"));
 					
+					writer.write(",");
+
+					writer.write(recAsma.getString("sintomas"));
+
+					writer.write(",");
+
+					writer.write(recAsma.getString("otro"));
+					
+					writer.write(",");
+
+					writer.write(recAsma.getString("tiempoImpedido"));
+					
+					writer.write(",");
+
+					writer.write(recAsma.getString("Frecuencia de Falta de Aire"));
+
+					writer.write(",");
+
+					writer.write(recAsma.getString("Frecuencia de uso de Inhalador"));
+
 					writer.write("\r\n");
 			
 					}
