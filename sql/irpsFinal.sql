@@ -257,7 +257,7 @@ CREATE TABLE `Usuario` (
   `Fecha de Nacimiento` date NOT NULL,
   `Direccion` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `Codigo Postal` int(5) NOT NULL,
-  `IndicePersonalizado` int(2) DEFAULT NULL,
+  `IndicePersonalizado` varchar(2000) DEFAULT NULL,
   `Correo electronico` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `Contrasena` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `NumeroRecordatorio` int(2) DEFAULT NULL,

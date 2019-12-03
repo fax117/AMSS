@@ -2,7 +2,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
-import java.util.Vector;
+import java.util.*;
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/LoginUser")
@@ -41,7 +41,6 @@ public class LoginServlet extends HttpServlet{
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
 
-
 			//retrieve all registered users and store them in a vector
 
 			ResultSet res = stat.executeQuery("SELECT * FROM Usuario;");
@@ -78,7 +77,6 @@ public class LoginServlet extends HttpServlet{
 				if(username.equals(researcherList.get(i).getEmail())){
 					//username researcher exists in database
 					if(password.equals(researcherList.get(i).getPassword())){
-						System.out.println("SUCCESSS BITCHES IN RESEARCH");
 						if(researcherList.get(i).getClearance() == 1){
 							//admin login
 							loginSuccess = 2;
@@ -100,8 +98,10 @@ public class LoginServlet extends HttpServlet{
 				userName.setPath("/IRPS");
 				response.addCookie(userName);
 
+				//load main values of userLanding page
+
 				UserLandingRedirect redirect = new UserLandingRedirect();
-				String irpsVal = "404";
+				String irpsVal = "5";
 				try{
 					irpsVal = redirect.loadLanding();
 					request.setAttribute("irpsServerValue",irpsVal);
@@ -109,6 +109,26 @@ public class LoginServlet extends HttpServlet{
 				catch(Exception e){
 					//
 				}
+
+				int customIRPS = 0;
+
+				ResultSet getCustomIndex = stat.executeQuery("SELECT IndicePersonalizado FROM usuario where `Correo electronico` = '" + username + "';");
+				while(getCustomIndex.next()){
+					String javaCustomIndex = getCustomIndex.getString("IndicePersonalizado");
+					if(javaCustomIndex == null){
+						javaCustomIndex = irpsVal;
+					}
+					else{
+						List<String> historicVList;
+						historicVList = Arrays.asList(javaCustomIndex.split("\\s*,\\s*")); 
+						for(int i=0; i<historicVList.size(); i++){
+							customIRPS = customIRPS + Integer.parseInt(historicVList.get(i));
+						}
+						customIRPS = customIRPS / historicVList.size();
+					}
+				}
+				request.setAttribute("irpsCustomValue",customIRPS);
+
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
 				if(disp!=null){
 					disp.forward(request,response);

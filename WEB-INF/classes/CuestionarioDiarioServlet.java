@@ -60,6 +60,36 @@ public class CuestionarioDiarioServlet extends HttpServlet{
 				}
 			}
 
+			//Agrega current IRPS value a la tabla de usuario
+			//Recupera viejo string
+			ResultSet getCustomIndex = stat.executeQuery("SELECT IndicePersonalizado FROM usuario where `Correo electronico` = '" + cookies[1].getValue() + "';");
+			String updateList = "";
+			while(getCustomIndex.next()){
+				String javaCustomIndex = getCustomIndex.getString("IndicePersonalizado");
+				System.out.println("Current value of javaCustomIndex is: " + javaCustomIndex);
+				if(javaCustomIndex == null){
+					javaCustomIndex = "";
+				}
+				//Agrega nuevo string a la DB
+				UserLandingRedirect redirect = new UserLandingRedirect();
+				String irpsVal = "5";
+				try{
+					irpsVal = redirect.loadLanding();
+				}
+				catch(Exception e){
+					//
+				}
+				if(javaCustomIndex.length()>=1){
+					updateList = javaCustomIndex + "," + irpsVal;
+					System.out.println("Current value of updateList is: " + updateList);
+				}
+				else{
+					updateList = irpsVal;
+				}
+			}
+			int res3 = stat.executeUpdate("update usuario set IndicePersonalizado = '" + updateList + "' where `Correo electronico` = '" + cookies[1].getValue() + "';");
+
+
 			if(checkRedirect == 1){
 				response.sendRedirect("./kidAsQuiz.jsp");
 			}

@@ -38,13 +38,13 @@
                 <br>
                 <p>IRPS de hoy</p>
                 <br>
-                <p class="indexNumber"><c:out value="${requestScope.irpsServerValue}" /></p>
+                <p class="indexNumber"><c:out value="${requestScope.irpsServerValue}"/></p>
                 <br>
                 <div id="yourNumberCircle">
                     <br>
                     <p id="whiteText"> Tu número </p>
                     <br>
-                    <p class="indexNumber" id="whiteText">5</p>
+                    <p class="indexNumber" id="whiteText"><c:out value="${requestScope.irpsCustomValue}"/></p>
                     <br>
                 </div>
             </div>

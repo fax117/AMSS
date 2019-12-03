@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class UserLandingRedirect{
 
-	String irpsVal = "?";
+	String irpsVal = "5";
 	
 	public UserLandingRedirect(){
 
