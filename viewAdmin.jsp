@@ -29,7 +29,6 @@
 			</ul>
 		</div>
 	</nav>
-			<a href="profile.jsp"><img class="header-icons" id="profile-icon" src="img/profile-icon.svg"></a>
 	</header>
 
 	<form action="./AnswerAdmin" method="post">

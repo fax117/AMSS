@@ -29,7 +29,6 @@
             </ul>
           </div>
         </nav>
-            <img class="header-icons" id="profile-icon" src="img/profile-icon.svg">
         </header>
 
         <div id="thingsToDo">
