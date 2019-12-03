@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/Alertas")
+@WebServlet("/Recordatorio")
 public class AlertasServlet extends HttpServlet{
 
     public void init(ServletConfig config){
@@ -37,12 +37,12 @@ public class AlertasServlet extends HttpServlet{
 
 			String chosenIrps = request.getParameter("alert");
 
-			System.out.println(chosenIrps);
+			//System.out.println(chosenIrps);
 
 			int res = stat.executeUpdate("UPDATE usuario SET NumeroRecordatorio = \"" + 
 			chosenIrps + "\" WHERE id_usuario = \"" + usuarioId + "\";");
 
-			response.sendRedirect("./alertas.jsp");
+			response.sendRedirect("./landingUser.jsp");
 			stat.close();
 			con.close();
 		}

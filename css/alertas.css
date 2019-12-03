@@ -4,11 +4,6 @@
   overflow: hidden;
 }
 
-header{
-  float: left;
-  clear: both;
-}
-
 h1{
   color: #111; 
   font-size: 40px; 
@@ -18,7 +13,6 @@ h1{
   text-align: center; 
   float: left;
   clear: both;
-
 }
 
 .title{
@@ -28,22 +22,36 @@ h1{
 }
 
 #bod{
-  float: left;
-  clear: both;
-  height: auto;
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
-#chooseIRPS{
+.chooseIRPS{
   width: 100%;
-  height: auto;
-  margin: 0 auto;
+  float: left;
+}
+
+#sec1{
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+#sec2{
+  margin-left: 35px;
 }
 
 #chooseIRPSForm{
   width: 100%;
   height: auto;
-  background-color: red;
   margin: 0 auto;
+}
+
+.chooseIRPS li{
+  float: left;
 }
 
 .cent{
@@ -52,10 +60,7 @@ h1{
   width: 100%;
   text-align: center;
   padding: 20px 0;
-}
-
-#chooseIRPS li{
-  float: left;
+  margin: 10px 0;
 }
 
 .botones{
