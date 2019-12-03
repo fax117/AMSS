@@ -38,17 +38,15 @@ public class AlertasServlet extends HttpServlet{
 			String chosenIrps = request.getParameter("alert");
 
 			//System.out.println(chosenIrps);
-			Connection con2 = DriverManager.getConnection(url,dbusuario,dbpassword);
-			Statement stat2 = con.createStatement();
-			int res = stat2.executeUpdate("UPDATE usuario SET NumeroRecordatorio = \"" + 
-			chosenIrps + "\" WHERE id_usuario = \"" + usuarioId + "\";");
-
+			if(res1.next() ) {
+				int res = stat.executeUpdate("UPDATE usuario SET NumeroRecordatorio = \"" + 
+				chosenIrps + "\" WHERE id_usuario = \"" + usuarioId + "\";");
+			}
+			
 			response.sendRedirect("./landingUser.jsp");
 			stat.close();
 			con.close();
 
-			stat2.close();
-			con2.close();
 		}
 		catch(Exception e){
 			e.printStackTrace();
