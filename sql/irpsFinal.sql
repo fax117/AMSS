@@ -18,7 +18,8 @@
 --
 -- Table structure for table `Chat`
 --
-
+CREATE DATABASE IF NOT EXISTS `irps_tec_db`;
+USE irps_tec_db;
 DROP TABLE IF EXISTS `Chat`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
@@ -237,6 +238,7 @@ CREATE TABLE `Recomendaciones` (
   `id_Recomendaciones` int(10) NOT NULL AUTO_INCREMENT,
   `Descripcion` varchar(500) COLLATE utf8_spanish_ci NOT NULL,
   `Nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `AssociatedVal` INT(3) NOT NULL,
   PRIMARY KEY (`id_Recomendaciones`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -288,5 +290,14 @@ CREATE TABLE `Usuario_Condicion` (
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+INSERT INTO `Investigador` (Clearance, Nombre, Correo, Contrasena, id_Investigador) VALUES ('1','Administrador', 'psegura@tec.mx', '@dmin', '1000');
+INSERT INTO RECOMENDACIONES (Descripcion, Nombre, AssociatedVal) VALUES ("Disfruta de tus actividades con normalidad.", "Regular-1", 3);
+INSERT INTO RECOMENDACIONES (Descripcion, Nombre, AssociatedVal) VALUES ("Reduce actividades al aire libre si empiezas a sentirte mal.", "Bad-1", 6);
+INSERT INTO RECOMENDACIONES (Descripcion, Nombre, AssociatedVal) VALUES ("No realices esfuerzo físico al aire libre si presentas síntomas.", "VeryBad-1", 8);
+INSERT INTO RECOMENDACIONES (Descripcion, Nombre, AssociatedVal) VALUES ("Procura mantenerte en interiores.", "VeryBad-2", 8);
+INSERT INTO RECOMENDACIONES (Descripcion, Nombre, AssociatedVal) VALUES ("Considera el uso de tapabocas.", "VeryBad-3", 7);
+INSERT INTO RECOMENDACIONES (Descripcion, Nombre, AssociatedVal) VALUES ("Procura fuertemente mantenerte en interiores.", "Worst-1", 11);
+INSERT INTO RECOMENDACIONES (Descripcion, Nombre, AssociatedVal) VALUES ("No realices ninguna actividad al aire libre.", "Worst-2", 11);
 
 -- Dump completed on 2019-12-01  1:25:29
