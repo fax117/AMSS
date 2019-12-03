@@ -40,30 +40,28 @@
         </header>
 
         <div id="bod">
-            <form action="">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Correo</th>
-                                <th>Contraseña</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach items="${requestScope.researcherListShow}" var="us2">
-                            <tr>
-                                <td><c:out value="${us2.id_investigador}"/></td>
-                                <td><c:out value="${us2.Nombre}"/></td>
-                                <td><c:out value="${us2.Correo}"/></td>
-                                <td><c:out value="${us2.Contrasena}"/></td>
-                                <td><input type="submit" value="Eliminar"></td>
-								<td><input type="submit" value="Modificar"></td>
-                            </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
-            </form>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Contraseña</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${requestScope.researcherListShow}" var="us2">
+                    <tr>
+                        <td><c:out value="${us2.id_investigador}"/></td>
+                        <td><c:out value="${us2.Nombre}"/></td>
+                        <td><c:out value="${us2.Correo}"/></td>
+                        <td><c:out value="${us2.Contrasena}"/></td>
+                        <td><form action="BorrarInvesti" method="get"><input type="submit" class="buttonC" value="Eliminar"></form></td>
+                        <td><form action="EditarInvestigador" method="get"><input type="submit" class="buttonC" value="Modificar"></form></td>
+                    </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
         </div>
         
 

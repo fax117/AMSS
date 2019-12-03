@@ -163,3 +163,14 @@ a{
 #menuToggle input:checked ~ ul{
   transform: none;
 }
+
+.buttonC{
+  background-color: #47525E;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  clear: both;
+  display: inline-block;
+}

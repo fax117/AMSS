@@ -64,7 +64,7 @@ public class ShowResearcherServlet extends HttpServlet{
 
 		}
 		catch(Exception e){
-			/*e.printStackTrace();
+			e.printStackTrace();
 			try{
     		RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
         	if(disp!=null){
@@ -72,7 +72,7 @@ public class ShowResearcherServlet extends HttpServlet{
           }
         } catch(Exception e2){
 
-				}*/
+				}
 		}
 	}
 }
