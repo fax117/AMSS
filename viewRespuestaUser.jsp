@@ -22,7 +22,7 @@
 
 			<ul id="menu">
 				<a href="#"><li>Inicio</li></a>
-				<a href="#"><li>Cuenta</li></a>
+				<a href="#"><li>Alerta</li></a>
 				<a href="#"><li>Programar Recordatorio</li></a>
 				<a href="TransitionServlet"><li>Consulta un médico</li></a>
 				<a href="TransitionRespuesta"><li>Ver Respuesta</li></a>
