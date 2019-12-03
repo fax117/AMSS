@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html; charset=UTF-8" %> 
+<%@ page contentType="text/html; charset=UTF-8" %>
 
 <html>
     <head>
@@ -42,17 +42,17 @@
           <p class="cent">Escoge un número para fijar un recordatorio.</p>
 
           <ul id="chooseIRPS">
-            <button><li>1</li></button>
-            <button><li>2</li></button>
-            <button><li>3</li></button>
-            <button><li>4</li></button>
-            <button><li>5</li></button>
-            <button><li>6</li></button>
-            <button><li>7</li></button>
-            <button><li>8</li></button>
-            <button><li>9</li></button>
-            <button><li>10</li></button>
-            <button><li>10+</li></button>
+            <li><button class="but1 botones">1</button></li>
+            <li><button class="but2 botones">2</button></li>
+            <li><button class="but3 botones">3</button></li>
+            <li><button class="but4 botones">4</button></li>
+            <li><button class="but5 botones">5</button></li>
+            <li><button class="but6 botones">6</button></li>
+            <li><button class="but7 botones">7</button></li>
+            <li><button class="but8 botones">8</button></li>
+            <li><button class="but9 botones">9</button></li>
+            <li><button class="but10 botones">10</button></li>
+            <li><button class="but11 botones">10+</button></li>
           </ul>
 
           <p class="cent">Por predeterminado, se manda notificación cuando el IRPS aparece con tu número o superior a él</p>

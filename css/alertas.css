@@ -1,6 +1,7 @@
   body{
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  overflow: hidden;
 }
 
 header{
@@ -22,7 +23,7 @@ h1{
 
 .title{
   width: 100%;
-  height: auto;
+  height: 50px;
   padding: 10px;
 }
 
@@ -34,6 +35,15 @@ h1{
 
 #chooseIRPS{
   width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#chooseIRPSForm{
+  width: 100%;
+  height: auto;
+  background-color: red;
+  margin: 0 auto;
 }
 
 .cent{
@@ -46,7 +56,24 @@ h1{
 
 #chooseIRPS li{
   float: left;
-  padding: 10px;
-  height: 30px;
-  width: 30px;
 }
+
+.botones{
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 25px;
+}
+
+.but1{ background-color: #588AC7;}
+.but2{ background-color: #7EA2D6;}
+.but3{ background-color: #9FB8E0;}
+.but4{ background-color: #C2D2EB;}
+.but5{ background-color: #F2E8E6;}
+.but6{ background-color: #D6BCAF;}
+.but7{ background-color: #BC9279;}
+.but8{ background-color: #9E6844;}
+.but9{ background-color: #84401D; color: white;}
+.but10{ background-color: #691417; color: white;}
+.but11{ background-color: #371011; color: white;}
