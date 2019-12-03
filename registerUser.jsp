@@ -10,6 +10,7 @@
         <title>Registro Usuario</title>
         <link href="css/resetCss.css" rel ="stylesheet">
         <link href="css/register.css" rel ="stylesheet">
+        <script type="text/javascript" src="js/jQuery.js"></script>
     </head>
     <body>
 
@@ -28,11 +29,32 @@
                     <input type="date" required placeholder="Fecha de nacimiento" class="inp user" name="addBirthdate" id="addBirthdate">
                     <input type="password" required placeholder="Contraseña" class="inp passw" name="addPW" id="addPW">
                     <input type="password" required placeholder="Confirmar Contraseña" class="inp passw" name="addPW2" id="addPW2">
+                    <div class="reg-error"></div>
                     <input type="submit" value="Siguiente" id="button">
                 </form>
-                <!-- <div class="login"></div> 
-                <div class="reg-error"></div> -->
             </div>
         </section>
+
+        <script>
+            
+            $('#button').on('click', function(){
+ 
+                 var error=false;
+                //Validate equal passwords:
+                if($('#addPW').val() != $('#addPW2').val()){
+                    $('#addPW').css('border-bottom', '3px solid #443742');
+                    $('#addPW2').css('border-bottom', '3px solid #443742');
+                    error=true;
+                }
+                if(error){
+                    $('.reg-error').text('Contraseñas distintas.');
+                    $('.reg-error').fadeIn().css('display','block').delay(1000).fadeOut();
+                    return false;
+                }
+                //If no errors, continue
+                
+            });
+         
+         </script>
     </body>
 </html>
