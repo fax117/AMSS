@@ -13,7 +13,8 @@
     <body>
         <div class="backgroundAzul">
             <h1>
-                Su csv ha sido creado
+                Su csv ha sido creado exitosamente.
+                <br></br> Revise la carpeta "csv" dentro de la carpeta "IRPS".
                 <a href="generateReport.jsp"><button id="button">Regresar</button></a>
             </h1>
            

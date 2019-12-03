@@ -46,10 +46,7 @@ public class ExecuteGenerarReporte extends HttpServlet{
             String initialDate = request.getParameter("initialDate");
 			String endDate = request.getParameter("endDate");
 			String enfermedad = request.getParameter("enfermedad");
-			String path ="../webapps/IRPS/csv/"+initialDate+" "+ enfermedad+".csv";
-
-			
-
+			String path ="../webapps/IRPS/csv/"+initialDate+"_"+ enfermedad+".csv";
 
             ResultSet recAsma = stat.executeQuery("SELECT * FROM cuestionarioasma WHERE fecha BETWEEN \" "+ initialDate + " \" and \" "+ endDate +" \" ");
 			ResultSet recEpoc = stat1.executeQuery("SELECT * FROM cuestionarioepoc WHERE fecha BETWEEN \" "+ initialDate + " \" and \" "+ endDate +" \" ");
@@ -94,8 +91,9 @@ public class ExecuteGenerarReporte extends HttpServlet{
 					writer.write(recAsma.getString("horarioAlAireLibre"));
 					
 					writer.write(",");
-
-					writer.write(recAsma.getString("sintomas"));
+					
+					String sintomasEscaped = escapeSpecialCharacters(recAsma.getString("sintomas"));
+					writer.write(sintomasEscaped);
 
 					writer.write(",");
 
@@ -149,11 +147,13 @@ public class ExecuteGenerarReporte extends HttpServlet{
 				
 					writer.write(",");
 					
-					writer.write(recAsmaNinos.getString("horarioAlAireLibre"));
+					String horarioEscaped = escapeSpecialCharacters(recAsmaNinos.getString("horarioAlAireLibreHoy"));
+					writer.write(horarioEscaped);
 	
 					writer.write(",");
 					
-					writer.write(recAsmaNinos.getString("sintomas"));
+					String sintomasEscaped = escapeSpecialCharacters(recAsmaNinos.getString("sintomas"));
+					writer.write(sintomasEscaped);
 	
 					writer.write(",");
 					
@@ -223,11 +223,13 @@ public class ExecuteGenerarReporte extends HttpServlet{
 				
 					writer.write(",");
 					
-					writer.write(recEpoc.getString("horarioAlAireLibreHoy"));
+					String horarioEscaped = escapeSpecialCharacters(recEpoc.getString("horarioAlAireLibreHoy"));
+					writer.write(horarioEscaped);
 	
 					writer.write(",");
 					
-					writer.write(recEpoc.getString("sintomas"));
+					String sintomasEscaped = escapeSpecialCharacters(recEpoc.getString("sintomas"));
+					writer.write(sintomasEscaped);
 	
 					writer.write(",");
 					
@@ -316,11 +318,13 @@ public class ExecuteGenerarReporte extends HttpServlet{
 	
 					writer.write(",");
 					
-					writer.write(recSanos.getString("horarioAireLibre"));
+					String horarioEscaped = escapeSpecialCharacters(recSanos.getString("horarioAireLibre"));
+					writer.write(horarioEscaped);
 	
 					writer.write(",");
 					
-					writer.write(recSanos.getString("sintomas"));
+					String sintomasEscaped = escapeSpecialCharacters(recSanos.getString("sintomas"));
+					writer.write(sintomasEscaped);
 	
 					writer.write(",");
 					
@@ -347,12 +351,29 @@ public class ExecuteGenerarReporte extends HttpServlet{
 				disp.forward(request,response);
 			}
 
+			stat.close();
+			stat1.close();
+			stat2.close();
+			stat3.close();
+			con.close();
+
         } 
         catch(Exception e){
             e.printStackTrace();
-        }
+		}
+		
+		
 
-    }
+	}
+	
+	public static String escapeSpecialCharacters(String data) {
+		String escapedData = data.replaceAll("\\R", " ");
+		if (data.contains(",") || data.contains("\"") || data.contains("'")) {
+			data = data.replace("\"", "\"\"");
+			escapedData = "\"" + data + "\"";
+		}
+		return escapedData;
+	}
                 
 }
 
