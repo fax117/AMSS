@@ -46,56 +46,6 @@ public class GenerarReporteServlet extends HttpServlet{
 				disp.forward(request,response);
 			}
 
-            /*String initialDate = request.getParameter("initialDate");
-			String endDate = request.getParameter("endDate");
-			String enclosed = "$";
-			String linesTerminated = "\n";
-			String path = "D:/Documentos/BlocsDeNotas/"+initialDate+".csv";
-			ResultSet rec = stat.executeQuery("SELECT * FROM cuestionarioasma WHERE fecha BETWEEN \" "+ initialDate + " \" and \" "+ endDate +" \" INTO OUTFILE  \" "+ path +" \"  FIELDS ENCLOSED BY \" "+enclosed+" \"  LINES TERMINATED BY \" "+linesTerminated+" \" ;");
-			
-		
-			try {
-				File file = new File(path);
-	
-				writer = new FileWriter(file, true);  //True = Append to file, false = Overwrite
-				while((rec!=null) && (rec.next()))
-				{
-				
-				writer.write(rec.getString("id_cuestionario_asma"));
-				
-				writer.write(",");
-				
-				writer.write(rec.getString("fecha"));
-			
-				writer.write(",");
-				
-				writer.write(rec.getString("id_usuario"));
-				
-				writer.write(",");
-				
-				writer.write(rec.getString("actividadesAireLibre"));
-			
-				writer.write(",");
-			
-				writer.write(rec.getString("aireLibreMasDeTreintaMin"));
-			
-				writer.write(",");
-				
-				writer.write(rec.getString("horarioAlAireLibre"));
-				
-				writer.write("\r\n");
-		
-				}
-			
-				writer.close();
-			
-				System.out.println("Write success!");
-			
-				} catch (IOException e) {
-		
-				e.printStackTrace();
-				
-				}*/
 
 			
 		
