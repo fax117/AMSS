@@ -40,6 +40,8 @@ public class BorrarInvesti extends HttpServlet{
 
 			String id = request.getParameter("borrarID");
 
+			System.out.println(id);
+
 
       int res = stat.executeUpdate("DELETE FROM Investigador WHERE id_Investigador='"+ id +"';");
 

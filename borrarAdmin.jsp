@@ -34,7 +34,6 @@
 
 	<form action="./BorrarInvesti" method="post">
 		<table class="pure-table pure-table-horizontal">
-  		<caption>Borrar Investigador</caption>
   		<tr>
     		<th>Nombre</th>
     		<th>Correo</th>
@@ -49,7 +48,7 @@
   					<c:out value= "${us.email}" />
   				</td>
           <td>
-						<input type="radio" name="borrarID" value= "${us.id_Researcher}">
+						<input type="radio" name="borrarID" value="${us.id_Researcher}">
           </td>
   			</tr>
 			</c:forEach>

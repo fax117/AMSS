@@ -66,6 +66,9 @@ public class ViewChatAdmin extends HttpServlet{
 			stat.close();
 			con.close();
 
+			stat2.close();
+			con2.close();
+
 			//Cambiar
       request.setAttribute("chatList", chatList);
 

@@ -16,7 +16,7 @@ public class Researcher{
 	public Researcher(String name, String email, Long id_Researcher){
 		this.name = name;
 		this.email = email;
-		this.password = password;
+		this.id_Researcher = id_Researcher;
 	}
 
 	public void setId_Researcher(Long id_Researcher){
