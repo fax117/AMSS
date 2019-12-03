@@ -24,9 +24,9 @@
               <a href="./LandingPageAdmin.jsp"><li>Inicio</li></a>
               <a href="GenerarReporteServlet"><li>Obetener Reportes</li></a>
               <a href="./registerRe.jsp"><li>Registrar Investigadores</li></a>
-              <a href="VerInvestigadores"><li>Borrar Investigadores</li></a>
-              <a href="./verInvestigador.jsp"><li>Editar Investigadores</li></a>
-              <a href="#"><li>Agregar Recomendaciones</li></a>
+              <a href="BorrarVerServlet"><li>Borrar Investigadores</li></a>
+              <a href="#"><li>Editar Investigadores</li></a>
+              <a href="./registerRecommendation.jsp"><li>Agregar Recomendaciones</li></a>
               <a href="ViewPregunta"><li>Responder</li></a>
               <a href="Logout"><li>Cerrar Sesión</li></a>
             </ul>
@@ -37,9 +37,9 @@
         <div id="thingsToDo">
             <a href="GenerarReporteServlet"><button id="button">Obtener Reportes</button></a>
             <a href="./registerRe.jsp"><button id="button">Registrar investigador</button></a>
-            <a href="VerInvestigadores"><button id="button">Borrar investigador</button></a>
-            <a href="VerInvestigador"><button id="button">Editar investigador</button></a>
-            <button id="button">Agregar recomendaciones</button>
+            <a href="BorrarVerServlet"><button id="button">Borrar investigador</button></a>
+            <a href=""><button id="button">Editar investigador</button></a>
+            <a href="./registerRecommendation.jsp"><button id="button">Agregar recomendaciones</button></a>
         </div>
 
     </body>

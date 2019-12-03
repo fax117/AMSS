@@ -6,8 +6,8 @@ import java.util.*;
 import javax.servlet.annotation.WebServlet;
 import java.lang.Math;
 
-@WebServlet("/Recordatorio")
-public class AlertasServlet extends HttpServlet{
+@WebServlet("/RedirectHome")
+public class RedirectHome extends HttpServlet{
 
     public void init(ServletConfig config){
 		try{
@@ -19,6 +19,14 @@ public class AlertasServlet extends HttpServlet{
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response){
+		redirection(request, response);
+	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		redirection(request, response);
+	}
+
+    public void redirection(HttpServletRequest request, HttpServletResponse response){
 		try{
 			//------Connection to mySQL setup STARTS-------
 			//credentials
@@ -33,15 +41,6 @@ public class AlertasServlet extends HttpServlet{
 			Statement stat = con.createStatement();
 
 			Cookie[] cookies = request.getCookies();
-			ResultSet res1 = stat.executeQuery("SELECT id_usuario FROM Usuario WHERE `Correo electronico` ='" + cookies[1].getValue() + "';");
-
-			//System.out.println(chosenIrps);
-			if(res1.next() ) {
-				String usuarioId = res1.getString("id_usuario");
-				String chosenIrps = request.getParameter("alert");
-				int res = stat.executeUpdate("UPDATE usuario SET NumeroRecordatorio = \"" + 
-				chosenIrps + "\" WHERE id_usuario = \"" + usuarioId + "\";");
-			}
 			
 			UserLandingRedirect redirect = new UserLandingRedirect();
 				String irpsVal = "5";
@@ -87,7 +86,7 @@ public class AlertasServlet extends HttpServlet{
 
 				request.setAttribute("customRecommendation",customAdvice);
 
-				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
+				RequestDispatcher disp = getServletContext().getRequestDispatcher("./RedirectHome");
 				if(disp!=null){
 					disp.forward(request,response);
 				}
