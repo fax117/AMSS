@@ -58,7 +58,7 @@ public class CuestionarioSanosServlet extends HttpServlet{
 
 
 					int res = stat.executeUpdate("INSERT INTO CuestionarioSanos (fecha, id_usuario, actividadesAireLibre, donde, tipoEjercicio, cansancio, cansancioEscaleras, aireLibreTreintaMins, horarioAireLibre, sintomas, otros) VALUES (\""
-						+ fecha + "\" , \"" + usuarioId + "\", \"" + actividadesAireLibre + "\" , \"" + donde + "\", \"" + cansancio + "\" , \"" + cansancioEscaleras + "\" , \"" + aireLibreTreintaMins + "\" , \"" + horarioAireLibre + "\" , \""
+						+ fecha + "\" , \"" + usuarioId + "\", \"" + actividadesAireLibre + "\" , \"" + donde + "\" , \"" + tipoEjercicio + "\", \"" + cansancio + "\" , \"" + cansancioEscaleras + "\" , \"" + aireLibreTreintaMins + "\" , \""
 						+ horarios + "\" , \"" + sintomasL + "\" , \"" + otros + "\");");
 				}
 			}
