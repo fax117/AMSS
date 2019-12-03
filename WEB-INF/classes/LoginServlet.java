@@ -4,6 +4,7 @@ import javax.servlet.http.*;
 import java.sql.*;
 import java.util.*;
 import javax.servlet.annotation.WebServlet;
+import java.lang.Math;
 
 @WebServlet("/LoginUser")
 public class LoginServlet extends HttpServlet{
@@ -128,6 +129,21 @@ public class LoginServlet extends HttpServlet{
 					}
 				}
 				request.setAttribute("irpsCustomValue",customIRPS);
+
+				ResultSet recomendacionesRS  = stat.executeQuery("SELECT * from recomendaciones;");
+				Vector<Recommendation> recommendationVector = new Vector<Recommendation>();
+
+				while(recomendacionesRS.next()){
+					Recommendation aux = new Recommendation(Integer.parseInt(recomendacionesRS.getString("id_Recomendaciones")), recomendacionesRS.getString("Descripcion"), recomendacionesRS.getString("Nombre"), Integer.parseInt(recomendacionesRS.getString("AssociatedVal")));
+					if(aux.getAssociatedVal() <= Integer.parseInt(irpsVal)+1 && aux.getAssociatedVal() >= Integer.parseInt(irpsVal)-1){
+						recommendationVector.add(aux);
+					}
+				}
+
+				int randomInt = (int)(Math.random()*recommendationVector.size()+1);
+				String customAdvice = recommendationVector.get(randomInt-1).getDescripcion();
+
+				request.setAttribute("customRecommendation",customAdvice);
 
 				RequestDispatcher disp = getServletContext().getRequestDispatcher("/landingUsers.jsp");
 				if(disp!=null){

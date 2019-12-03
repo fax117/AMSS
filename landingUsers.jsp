@@ -50,10 +50,7 @@
             </div>
         </div>
         <div class="recoms">
-            <img class="recomIcons" src="img/recomNotDrive.svg">
-            <img class="recomIcons" src="img/recomNoExercise.svg">
-            <img class="recomIcons" src="img/recomAsthma.svg">
-            <img class="recomIcons" src="img/recomNoSun.svg">
+            <p class="indexNumber" id="whiteText"><c:out value="${requestScope.customRecommendation}"/></p>
         </div>
 
         <div id="center">
