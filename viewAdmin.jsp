@@ -21,9 +21,11 @@
 
 			<ul id="menu">
 				<a href="#"><li>Inicio</li></a>
-				<a href="#"><li>Programar Recordatorio</li></a>
-				<a href="TransitionServlet"><li>Consulta un médico</li></a>
-				<a href="TransitionRespuesta"><li>Ver Respuesta</li></a>
+				<a href="GenerarReporteServlet"><li>Obetener Reportes</li></a>
+				<a href="RegisterRe"><li>Registrar Investigadores</li></a>
+				<a href="BorrarVerServlet"><li>Borrar Investigadores</li></a>
+				<a href="#"><li>Editar Investigadores</li></a>
+				<a href="#"><li>Agregar Recomendaciones</li></a>
 				<a href="Logout"><li>Cerrar Sesión</li></a>
 			</ul>
 		</div>

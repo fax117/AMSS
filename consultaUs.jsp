@@ -21,7 +21,7 @@
 
 			<ul id="menu">
 				<a href="#"><li>Inicio</li></a>
-				<a href="#"><li>Programar Recordatorio</li></a>
+				<a href="ProgramarRecordatorio"><li>Programar Recordatorio</li></a>
 				<a href="TransitionServlet"><li>Consulta un médico</li></a>
 				<a href="TransitionRespuesta"><li>Ver Respuesta</li></a>
 				<a href="Logout"><li>Cerrar Sesión</li></a>
