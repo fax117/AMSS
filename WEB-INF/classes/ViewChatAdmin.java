@@ -36,6 +36,10 @@ public class ViewChatAdmin extends HttpServlet{
 			Connection con = DriverManager.getConnection(url,dbusuario,dbpassword);
 			Statement stat = con.createStatement();
 
+			//Second connection
+			Connection con2 = DriverManager.getConnection(url,dbusuario,dbpassword);
+			Statement stat2 = con2.createStatement();
+
 			//------Connection to mySQL setup ENDS----------
 
       ResultSet res = stat.executeQuery("SELECT * FROM Chat;");
@@ -44,14 +48,19 @@ public class ViewChatAdmin extends HttpServlet{
 			while(res.next()) {
           String cond = res.getString("contestada");
           if ( cond.equals("0") ) {
-          String temp = res.getString("id_usuario");
-          String asunto = res.getString("asunto");
-					String pregunta = res.getString("pregunta");
-					String id_pregunta = res.getString("id_pregunta");
+          	String temp = res.getString("id_usuario");
+          	String asunto = res.getString("asunto");
+						String pregunta = res.getString("pregunta");
+						String id_pregunta = res.getString("id_pregunta");
 
-          Chat aux = new Chat(temp, pregunta, asunto, id_pregunta);
-    			chatList.add(aux);
-        }
+						ResultSet res2 = stat2.executeQuery("SELECT `Correo electronico` FROM Usuario WHERE id_usuario=" + temp + ";");
+
+						if (res2.next()) {
+							String name = res2.getString("Correo electronico");
+							Chat aux = new Chat(name, pregunta, asunto, id_pregunta);
+	    				chatList.add(aux);
+						}
+        	}
       }
 
 			stat.close();
