@@ -5,3 +5,7 @@ PACIENTES CON EPOC
 num. Cuestionario, Fecha, Usuario, Actividades al aire libre, Mas de treinta minutos al aire libre, Horario al aire Libre, Sintomas, Otra, Tos, Flemas, Opresion en el Pecho, Falta de aire en escaleras, Actividades domésticas, Seguro al salir de casa, Duermes sin problemas, Energia 
 2,2019-12-02,14,No,Si,[manana],[dolorCabe],asd,4,3,1,1,1,2,5,3
 3,2019-12-02,14,Si,Si,[medio, tarde],[ojosIrrit, dolorGar, reseqNa, dolorCabe],asas,5,5,5,5,5,5,5,5
+PACIENTES CON EPOC
+num. Cuestionario, Fecha, Usuario, Actividades al aire libre, Mas de treinta minutos al aire libre, Horario al aire Libre, Sintomas, Otra, Tos, Flemas, Opresion en el Pecho, Falta de aire en escaleras, Actividades domésticas, Seguro al salir de casa, Duermes sin problemas, Energia 
+2,2019-12-02,14,No,Si,[manana],[dolorCabe],asd,4,3,1,1,1,2,5,3
+3,2019-12-02,14,Si,Si,[medio, tarde],[ojosIrrit, dolorGar, reseqNa, dolorCabe],asas,5,5,5,5,5,5,5,5

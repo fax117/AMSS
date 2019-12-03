@@ -4,32 +4,65 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-	   <title>Consulta</title>
-	   <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link href="css/resetCss.css" rel ="stylesheet">
-       <link href="css/login.css" rel ="stylesheet">
+	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/resetCss.css" rel ="stylesheet">
+		<link href="css/tablasChat.css" rel ="stylesheet">
+
+			<style media="screen">
+				table {
+					border-spacing:10px; border-collapse: separate;
+				}
+
+				td {
+					border: 1px solid black;
+					border-radius: 9px;
+					border-color: black;
+					padding: 10px;
+				}
+			</style>
 </head>
+
 <body>
-	<form method="post" action="./RespuestaConsultaAdmin">
-  <table style="width:100%">
-    <caption>Cuestionarios</caption>
-    <tr>
-      <th>Pregunta del paciente</th>
-    </tr>
-    <c:forEach items="${requestScope.preguntaList}" var="us">
-      <tr>
-        <td>
-          <c:out value= "${us.pregunta}" />
-					<input type="hidden" name="id_pregunta" value="${us.id_pregunta}">
-        </td>
-      </tr>
-    </c:forEach>
-  </table>
-	<p>Contestar Consulta</p>
-		<textarea maxlength="1000" rows="10" cols="50" name="consultaTx"></textarea>
+	<header>
+	<nav role="navigation">
+		<div id="menuToggle">
+			<input type="checkbox" />
+			<span></span>
+			<span></span>
+			<span></span>
+
+			<ul id="menu">
+				<a href="#"><li>Inicio</li></a>
+				<a href="GenerarReporteServlet"><li>Obtener Reportes</li></a>
+				<a href="ViewPregunta"><li>Responder</li></a>
+				<a href="Logout"><li>Cerrar Sesión</li></a>
+			</ul>
+		</div>
+	</nav>
+	</header>
+
+	<div class="centerDiv">
+		<form method="post" action="./RespuestaConsultaAdmin">
+	  <table>
+	    <tr>
+	      <th>Pregunta del paciente</th>
+	    </tr>
+	    <c:forEach items="${requestScope.preguntaList}" var="us">
+	      <tr>
+	        <td>
+	          <c:out value= "${us.pregunta}" />
+						<input type="hidden" name="id_pregunta" value="${us.id_pregunta}">
+	        </td>
+	      </tr>
+	    </c:forEach>
+	  </table>
+		<p>Contestar Consulta</p>
 		<br>
-		<input type="submit" value="Enviar" id="button" onclick="return confirm('Quieres Enviar esta respuesta?')" >
-	</form>
+			<textarea maxlength="1000" rows="10" cols="50" name="consultaTx"></textarea>
+			<br>
+			<input type="submit" value="Enviar" id="button" onclick="return confirm('Quieres Enviar esta respuesta?')" >
+		</form>
+	</div>
 </body>
 </html>
