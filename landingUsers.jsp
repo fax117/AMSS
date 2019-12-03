@@ -30,6 +30,7 @@
                 <a href="Logout"><li>Cerrar Sesión</li></a>
               </ul>
           </div>
+			<div id="logoDiv"><img src="img/IRPSLogo.png" class="header-icons-right"/></div>
         </nav>
         </header>
 

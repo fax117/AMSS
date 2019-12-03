@@ -136,7 +136,7 @@ form, #forTables, #center{
 	height: 300px;
 	position: absolute;
 	left: 50%;
-    top: 50%;
+    top: 65%;
     transform: translateX(-50%) translateY(-50%);
 }
 
@@ -145,6 +145,20 @@ form, #forTables, #center{
     margin: auto;
 }
 
-@media only screen and (max-width: 600px) {
+#logoContainer{
+	width: 60%;
+	height: 40%;
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.logo{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+@media only screen and (max-width : 473px ){
     .centrardiv{width: 70%;}
 }

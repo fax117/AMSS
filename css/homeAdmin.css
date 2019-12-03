@@ -4,6 +4,14 @@
 	margin-top: 30px;
 }
 
+.header-icons-right{
+	width: 22%;
+	height: 8%;
+	position: absolute;
+	top: 25px;
+	right: 25px;
+}
+
 #ham-menu{
 	margin-left: 30px;
 }
