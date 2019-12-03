@@ -20,7 +20,7 @@
 			<span></span>
 
 			<ul id="menu">
-				<a href="./landingUsers.jsp"><li>Inicio</li></a>
+				<a href="RedirectHome"><li>Inicio</li></a>
 				<a href="ProgramarRecordatorio"><li>Programar Recordatorio</li></a>
 				<a href="TransitionServlet"><li>Consulta un médico</li></a>
 				<a href="TransitionRespuesta"><li>Ver Respuesta</li></a>

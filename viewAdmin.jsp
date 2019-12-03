@@ -25,7 +25,7 @@
 				<a href="RegisterRe"><li>Registrar Investigadores</li></a>
 				<a href="BorrarVerServlet"><li>Borrar Investigadores</li></a>
 				<a href="#"><li>Editar Investigadores</li></a>
-				<a href="#"><li>Agregar Recomendaciones</li></a>
+				<a href="./registerRecommendation.jsp"><li>Agregar Recomendaciones</li></a>
 				<a href="Logout"><li>Cerrar Sesión</li></a>
 			</ul>
 		</div>

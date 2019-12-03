@@ -26,7 +26,7 @@
               <a href="./registerRe.jsp"><li>Registrar Investigadores</li></a>
               <a href="BorrarVerServlet"><li>Borrar Investigadores</li></a>
               <a href="#"><li>Editar Investigadores</li></a>
-              <a href="#"><li>Agregar Recomendaciones</li></a>
+              <a href="./registerRecommendation.jsp"><li>Agregar Recomendaciones</li></a>
               <a href="ViewPregunta"><li>Responder</li></a>
               <a href="Logout"><li>Cerrar Sesión</li></a>
             </ul>
@@ -39,7 +39,7 @@
             <a href="./registerRe.jsp"><button id="button">Registrar investigador</button></a>
             <a href="BorrarVerServlet"><button id="button">Borrar investigador</button></a>
             <button id="button">Editar investigador</button>
-            <button id="button">Agregar recomendaciones</button>
+            <a href="./registerRecommendation.jsp"><button id="button">Agregar recomendaciones</button></a>
         </div>
 
     </body>
